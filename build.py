@@ -57,34 +57,47 @@ def game_bar(lang, alt):
 
 def game_footer(lang):
     if lang == 'es':
-        links = [('{up}depth40/', 'Depth 40'), ('{up}depth40/soporte/', 'Soporte'), ('{up}depth40/privacidad/', 'Privacidad')]
+        links = [('{up}', 'Todos los juegos y apps'), ('{up}depth40/', 'Depth 40'), ('{up}depth40/soporte/', 'Soporte'), ('{up}depth40/privacidad/', 'Privacidad')]
     else:
-        links = [('{up}depth40/en/', 'Depth 40'), ('{up}depth40/support/', 'Support'), ('{up}depth40/privacy/', 'Privacy')]
+        links = [('{up}en/', 'All games and apps'), ('{up}depth40/en/', 'Depth 40'), ('{up}depth40/support/', 'Support'), ('{up}depth40/privacy/', 'Privacy')]
     nav = ''.join(f'<a href="{h}">{t}</a>' for h, t in links)
     return f'''<div class="wrap"><footer><span>© 2026 TRESO SPA · Santiago, Chile</span><nav>{nav}</nav></footer></div>'''
 
 
 # ---------------------------------------------------------------- inicio del estudio
+# Catálogo: cada juego o app tiene su carpeta (/slug/, /slug/en/, /slug/soporte/, /slug/privacidad/ ...).
+# Para agregar uno nuevo: sumarlo aquí y crear sus páginas abajo, igual que Depth 40.
+CATALOG = [
+    dict(slug='depth40', kind={'es': 'JUEGO', 'en': 'GAME'}, name='DEPTH <em>40</em>', label='Depth 40', pic='d40-hero',
+         p={'es': 'Sigilo en submarino. Ocho misiones bajo el mar y el hielo, sin ver nunca el exterior: solo sonar, periscopio y silencio.',
+            'en': 'Submarine stealth. Eight missions under the sea and the ice, never seeing the outside: only sonar, periscope and silence.'},
+         status={'es': 'PRÓXIMAMENTE · ANDROID Y IPHONE', 'en': 'COMING SOON · ANDROID AND IPHONE'}),
+]
 STUDIO = {
-    'es': dict(h1='Hacemos juegos para el teléfono.', lead='Estudio Treso es el estudio de juegos de TRESO SPA, en Santiago de Chile. Nuestro primer juego es Depth 40.',
-               k='NUEVO · ANDROID Y IPHONE', p='Sigilo en submarino. Ocho misiones bajo el mar y el hielo, sin ver nunca el exterior: solo sonar, periscopio y silencio.', go='VER EL JUEGO ›',
-               contact='Contacto'),
-    'en': dict(h1='We make games for your phone.', lead='Estudio Treso is the game studio of TRESO SPA, in Santiago, Chile. Our first game is Depth 40.',
-               k='NEW · ANDROID AND IPHONE', p='Submarine stealth. Eight missions under the sea and the ice, never seeing the outside: only sonar, periscope and silence.', go='SEE THE GAME ›',
-               contact='Contact'),
+    'es': dict(h1='Juegos y apps para tu teléfono.', lead='Estudio Treso es el estudio de TRESO SPA, en Santiago de Chile. Hacemos juegos y aplicaciones para Android y iPhone.',
+               cat='NUESTROS JUEGOS Y APPS', go='VER MÁS ›', more_k='EN CAMINO', more='Más juegos y apps en desarrollo. Pronto aquí.', contact='Contacto'),
+    'en': dict(h1='Games and apps for your phone.', lead='Estudio Treso is the studio of TRESO SPA, in Santiago, Chile. We make games and apps for Android and iPhone.',
+               cat='OUR GAMES AND APPS', go='LEARN MORE ›', more_k='ON THE WAY', more='More games and apps in development. Coming here soon.', contact='Contact'),
 }
 for lang, t in STUDIO.items():
     path = '' if lang == 'es' else 'en'
     alt = '{up}en/' if lang == 'es' else '{up}'
-    d40 = '{up}depth40/' if lang == 'es' else '{up}depth40/en/'
+    cards = ''
+    for c in CATALOG:
+        href = '{up}' + c['slug'] + ('/' if lang == 'es' else '/en/')
+        cards += f'''
+  <a class="game-card" href="{href}">
+    <div class="pic" style="background-image:url('{{up}}assets/{c['pic']}-{lang}.jpg')" role="img" aria-label="{c['label']}"></div>
+    <div class="txt"><span class="k">{c['kind'][lang]} · {c['status'][lang]}</span><h2>{c['name']}</h2><p>{c['p'][lang]}</p><span class="go">{t['go']}</span></div>
+  </a>'''
     body = studio_top(lang, alt) + f'''
 <main id="main" class="wrap">
   <h1>{t['h1']}</h1>
   <p class="lead">{t['lead']}</p>
-  <a class="game-card{' en' if lang == 'en' else ''}" href="{d40}">
-    <div class="pic" role="img" aria-label="Depth 40"></div>
-    <div class="txt"><span class="k">{t['k']}</span><h2>DEPTH <em>40</em></h2><p>{t['p']}</p><span class="go">{t['go']}</span></div>
-  </a>
+  <h2 class="cat">{t['cat']}</h2>
+  <div class="catalog">{cards}
+    <div class="soon-card"><span class="k">{t['more_k']}</span><p>{t['more']}</p></div>
+  </div>
 </main>
 <div class="wrap"><footer><span>© 2026 TRESO SPA · Santiago, Chile</span><span>{t['contact']}: <a href="mailto:{MAIL}">{MAIL}</a></span></footer></div>'''
     page(path, lang, 'Estudio Treso', t['lead'], 'studio', body, '/en/' if lang == 'es' else '/', 0 if lang == 'es' else 1)
