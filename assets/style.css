@@ -1,0 +1,84 @@
+/* Estudio Treso · estudio.treso.cl */
+:root {
+  --mag: #E935C8; --mag-ink: #B8239C;
+  --ink: #16141A; --ink2: #4A4652; --line: #ECE6EE; --paper: #FFFFFF; --paper2: #FBF7FB;
+  --sea: #02070C; --sea2: #071A24; --cyan: #5FE6F0; --cyan2: #3FD8F0; --fog: #CFE9F2; --fog2: #8FB8C6; --rule: #1E3A4F;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 15px; line-height: 1.65; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { width: 100%; max-width: 980px; margin: 0 auto; padding-inline: 20px; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; color: #000; padding: 8px 12px; z-index: 9; }
+
+/* ---------- estudio (claro) ---------- */
+body.studio { background: var(--paper); color: var(--ink); font-family: 'Fira Sans', system-ui, -apple-system, Segoe UI, sans-serif; font-size: 17px; }
+.studio .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--mag); }
+.brand img { width: 58px; height: 35px; }
+.brand span { display: flex; flex-direction: column; line-height: 1; }
+.brand small { font-size: 10px; font-weight: 500; letter-spacing: 6px; }
+.brand b { font-size: 28px; font-weight: 800; letter-spacing: 1.5px; }
+.lang { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 2px; text-decoration: none; padding: 8px 12px; border: 1px solid var(--line); border-radius: 20px; color: var(--ink2); }
+.lang:hover { border-color: var(--mag); color: var(--mag-ink); }
+.studio h1 { font-size: clamp(34px, 7vw, 60px); line-height: 1.05; font-weight: 800; letter-spacing: -0.5px; margin: 56px 0 18px; max-width: 14ch; text-wrap: balance; }
+.studio .lead { font-size: 19px; color: var(--ink2); max-width: 46ch; margin: 0 0 56px; }
+.game-card { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); border-radius: 18px; overflow: hidden; background: var(--sea); color: var(--fog); text-decoration: none; margin-bottom: 72px; }
+.game-card .pic { background: url('d40-hero-es.jpg') right center / cover; min-height: 280px; }
+.game-card.en .pic { background-image: url('d40-hero-en.jpg'); }
+.game-card .txt { padding: 28px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
+.game-card .k { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 3px; color: var(--fog2); }
+.game-card h2 { margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 34px; letter-spacing: 4px; color: #E8F4F8; }
+.game-card h2 em { font-style: normal; color: var(--cyan); }
+.game-card p { margin: 0; font-size: 16px; line-height: 1.55; color: var(--fog); }
+.game-card .go { align-self: flex-start; margin-top: 6px; font-family: 'Chakra Petch', sans-serif; font-size: 14px; letter-spacing: 2px; padding: 10px 16px; border: 1px solid var(--cyan2); border-radius: 6px; color: #E8F4F8; }
+.game-card:hover .go { background: #0E2B3A; }
+.studio footer { border-top: 1px solid var(--line); padding-block: 26px 40px; font-size: 14px; color: var(--ink2); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+.studio footer a { color: var(--mag-ink); }
+
+/* ---------- Depth 40 (oscuro) ---------- */
+body.game { background: var(--sea); color: var(--fog); }
+.game .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 16px; }
+.mini { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--fog2); font-size: 11px; letter-spacing: 2px; }
+.mini img { width: 30px; height: 18px; filter: grayscale(1) brightness(2.2) sepia(1) hue-rotate(140deg) saturate(3); }
+.game .lang { border-color: var(--rule); color: var(--fog2); }
+.game .lang:hover { border-color: var(--cyan2); color: var(--cyan); }
+.hero { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 1024 / 500; max-width: 100%; background: var(--sea2) center / cover; }
+.game h1 { margin: 34px 0 6px; font-family: 'Chakra Petch', sans-serif; font-size: clamp(36px, 8vw, 56px); letter-spacing: 6px; color: #E8F4F8; line-height: 1; }
+.game h1 em { font-style: normal; color: var(--cyan); text-shadow: 0 0 22px rgba(63, 216, 240, 0.45); }
+.tag { margin: 0 0 22px; font-size: 12px; letter-spacing: 4px; color: var(--fog2); }
+.game .intro { font-size: 16px; max-width: 62ch; margin: 0 0 18px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 8px; }
+.pill { font-size: 11px; letter-spacing: 2px; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 20px; color: var(--fog2); }
+.pill.soon { border-color: var(--cyan2); color: var(--cyan); }
+.game h2 { font-family: 'Chakra Petch', sans-serif; font-size: 13px; letter-spacing: 4px; color: var(--fog2); margin: 48px 0 16px; font-weight: 600; }
+.shots { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(180px, 220px); gap: 14px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; }
+.shots img { border-radius: 12px; border: 1px solid var(--rule); scroll-snap-align: start; aspect-ratio: 1 / 2; width: 100%; height: auto; }
+.feat { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.feat div { border: 1px solid var(--rule); border-radius: 10px; padding: 16px; background: rgba(7, 26, 36, 0.5); }
+.feat b { display: block; font-family: 'Chakra Petch', sans-serif; letter-spacing: 1.5px; color: #E8F4F8; margin-bottom: 4px; }
+.feat span { font-size: 14px; color: var(--fog2); }
+.missions { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; counter-reset: m; }
+.missions li { counter-increment: m; padding: 12px 14px; border: 1px solid var(--rule); border-radius: 8px; font-family: 'Chakra Petch', sans-serif; letter-spacing: 1.5px; color: #E8F4F8; font-size: 15px; }
+.missions li::before { content: counter(m, decimal-leading-zero) '  '; color: var(--cyan); white-space: pre; }
+.missions li.sealed { color: var(--fog2); }
+.game footer { margin-top: 64px; border-top: 1px solid var(--rule); padding-block: 22px 40px; font-size: 13px; color: var(--fog2); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+.game footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.game footer a { color: var(--fog); }
+/* documentos: privacidad / soporte */
+.doc { max-width: 68ch; }
+.doc h1 { font-size: clamp(28px, 6vw, 40px); letter-spacing: 3px; margin-top: 28px; }
+.doc h2 { margin-top: 34px; }
+.doc p, .doc li { font-size: 15px; }
+.doc .meta { color: var(--fog2); font-size: 13px; }
+.doc .mail { display: inline-block; font-size: 18px; color: var(--cyan); padding: 10px 14px; border: 1px solid var(--cyan2); border-radius: 8px; text-decoration: none; margin: 6px 0; user-select: all; }
+.doc dt { color: #E8F4F8; font-weight: 500; margin-top: 18px; }
+.doc dd { margin: 4px 0 0; color: var(--fog); }
+
+@media (max-width: 680px) {
+  .game-card { grid-template-columns: 1fr; }
+  .game-card .pic { min-height: 0; aspect-ratio: 1024 / 500; }
+  .studio h1 { margin-top: 28px; }
+}
