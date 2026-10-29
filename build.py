@@ -64,6 +64,42 @@ def game_footer(lang):
     return f'''<div class="wrap"><footer><span>© 2026 TRESO SPA · Santiago, Chile</span><nav>{nav}</nav></footer></div>'''
 
 
+# ---------------------------------------------------------------- tiendas
+# Enlace de descarga por plataforma: None = "Próximamente". Cuando cada tienda publique la app, pegar aquí su enlace.
+#   Google Play: https://play.google.com/store/apps/details?id=cl.treso.depth40
+#   App Store:   https://apps.apple.com/app/id<número> (lo da App Store Connect)
+STORES = {
+    'depth40': {'android': None, 'ios': None},
+}
+PLAT = {'android': ('Google Play', 'Android'), 'ios': ('App Store', 'iPhone')}
+
+
+def platforms_line(slug, lang):
+    st = STORES[slug]
+    names = [PLAT[k][1] for k in ('android', 'ios') if k in st]
+    both = (' y ' if lang == 'es' else ' and ').join(names)
+    live = all(st[k] for k in st)
+    if live:
+        return ('DISPONIBLE · ' if lang == 'es' else 'AVAILABLE · ') + both.upper()
+    return ('PRÓXIMAMENTE · ' if lang == 'es' else 'COMING SOON · ') + both.upper()
+
+
+def store_buttons(slug, lang):
+    out = ''
+    for k in ('android', 'ios'):
+        if k not in STORES[slug]:
+            continue
+        store, dev = PLAT[k]
+        url = STORES[slug][k]
+        if url:
+            top = 'DESCARGAR EN' if lang == 'es' else 'GET IT ON'
+            out += f'<a class="store" href="{url}" rel="noopener"><small>{top}</small><b>{store}</b><span>{dev}</span></a>'
+        else:
+            top = 'PRÓXIMAMENTE EN' if lang == 'es' else 'COMING SOON TO'
+            out += f'<span class="store off" aria-disabled="true"><small>{top}</small><b>{store}</b><span>{dev}</span></span>'
+    return '<div class="stores">' + out + '</div>'
+
+
 # ---------------------------------------------------------------- inicio del estudio
 # Catálogo: cada juego o app tiene su carpeta (/slug/, /slug/en/, /slug/soporte/, /slug/privacidad/ ...).
 # Para agregar uno nuevo: sumarlo aquí y crear sus páginas abajo, igual que Depth 40.
@@ -71,7 +107,7 @@ CATALOG = [
     dict(slug='depth40', kind={'es': 'JUEGO', 'en': 'GAME'}, name='DEPTH <em>40</em>', label='Depth 40', pic='d40-hero',
          p={'es': 'Sigilo en submarino. Ocho misiones bajo el mar y el hielo, sin ver nunca el exterior: solo sonar, periscopio y silencio.',
             'en': 'Submarine stealth. Eight missions under the sea and the ice, never seeing the outside: only sonar, periscope and silence.'},
-         status={'es': 'PRÓXIMAMENTE · ANDROID Y IPHONE', 'en': 'COMING SOON · ANDROID AND IPHONE'}),
+         ),
 ]
 STUDIO = {
     'es': dict(h1='Juegos y apps para tu teléfono.', lead='Estudio Treso es el estudio de TRESO SPA, en Santiago de Chile. Hacemos juegos y aplicaciones para Android y iPhone.',
@@ -88,7 +124,7 @@ for lang, t in STUDIO.items():
         cards += f'''
   <a class="game-card" href="{href}">
     <div class="pic" style="background-image:url('{{up}}assets/{c['pic']}-{lang}.jpg')" role="img" aria-label="{c['label']}"></div>
-    <div class="txt"><span class="k">{c['kind'][lang]} · {c['status'][lang]}</span><h2>{c['name']}</h2><p>{c['p'][lang]}</p><span class="go">{t['go']}</span></div>
+    <div class="txt"><span class="k">{c['kind'][lang]} · {platforms_line(c['slug'], lang)}</span><h2>{c['name']}</h2><p>{c['p'][lang]}</p><span class="go">{t['go']}</span></div>
   </a>'''
     body = studio_top(lang, alt) + f'''
 <main id="main" class="wrap">
@@ -139,13 +175,14 @@ for lang, t in D40.items():
     shots = ''.join(f'<img src="{{up}}assets/d40-{n}-{lang}.jpg" width="540" height="1080" loading="lazy" alt="{a}">' for n, a in zip(t['shots'], t['shot_alt']))
     feats = ''.join(f'<div><b>{a}</b><span>{b}</span></div>' for a, b in t['feats'])
     mis = ''.join(f'<li{" class=\"sealed\"" if i == 7 else ""}>{m.upper()}</li>' for i, m in enumerate(t['mis']))
-    pills = f'<span class="pill soon">{t["soon"]}</span>' + ''.join(f'<span class="pill">{p}</span>' for p in t['pills'])
+    pills = ''.join(f'<span class="pill">{p}</span>' for p in t['pills'])
     body = game_bar(lang, alt) + f'''
 <main id="main" class="wrap">
   <div class="hero" style="background-image:url('{{up}}assets/d40-hero-{lang}.jpg')" role="img" aria-label="Depth 40"></div>
   <h1>DEPTH <em>40</em></h1>
   <p class="tag">{t['tag']}</p>
   {''.join(f'<p class="intro">{p}</p>' for p in t['intro'])}
+  {store_buttons('depth40', lang)}
   <div class="pills">{pills}</div>
   <h2>{t['shots_h']}</h2>
   <div class="shots" role="group" aria-label="{t['alt']}" tabindex="0">{shots}</div>

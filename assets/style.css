@@ -54,6 +54,13 @@ body.game { background: var(--sea); color: var(--fog); }
 .game h1 em { font-style: normal; color: var(--cyan); text-shadow: 0 0 22px rgba(63, 216, 240, 0.45); }
 .tag { margin: 0 0 22px; font-size: 12px; letter-spacing: 4px; color: var(--fog2); }
 .game .intro { font-size: 16px; max-width: 62ch; margin: 0 0 18px; }
+.stores { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 4px; }
+.store { display: grid; grid-template-columns: auto; min-width: 170px; padding: 10px 16px; border-radius: 10px; border: 1px solid var(--cyan2); background: #0E2B3A; color: #E8F4F8; text-decoration: none; line-height: 1.25; }
+.store small { font-size: 10px; letter-spacing: 2px; color: var(--fog2); }
+.store b { font-family: 'Chakra Petch', sans-serif; font-size: 19px; letter-spacing: 1px; }
+.store span { font-size: 11px; color: var(--fog2); }
+.store:hover { background: #12384A; }
+.store.off { border-style: dashed; border-color: var(--rule); background: transparent; color: var(--fog); cursor: default; }
 .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 8px; }
 .pill { font-size: 11px; letter-spacing: 2px; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 20px; color: var(--fog2); }
 .pill.soon { border-color: var(--cyan2); color: var(--cyan); }
