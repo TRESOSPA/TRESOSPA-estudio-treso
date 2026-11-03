@@ -4,7 +4,7 @@ import os
 ROOT = os.path.dirname(os.path.abspath(__file__))
 MAIL = 'contacto@treso.cl'
 SITE = 'https://estudio.treso.cl'
-UPDATED = {'es': '28 de octubre de 2026', 'en': 'October 28, 2026'}
+UPDATED = {'es': '3 de noviembre de 2026', 'en': 'November 3, 2026'}
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Fira+Sans:wght@400;500;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">')
@@ -144,7 +144,7 @@ D40 = {
         tag='SIGILO EN SUBMARINO', soon='PRÓXIMAMENTE EN GOOGLE PLAY Y APP STORE',
         intro=['Eres el capitán. Desde la consola de mando decides el rumbo, la velocidad y la profundidad. Cada ruido que haces puede delatarte.',
                'Depth 40 es un juego de sigilo en primera persona dentro de un submarino. No ves el mar: lo escuchas. El sonar, el periscopio y tu instinto son lo único que tienes.'],
-        pills=['8 MISIONES', 'ESPAÑOL · ENGLISH', 'SIN ANUNCIOS', 'SIN COMPRAS', 'SIN INTERNET'],
+        pills=['8 MISIONES', 'ESPAÑOL · ENGLISH', '2 MISIONES GRATIS', 'PAGO ÚNICO', 'SIN ANUNCIOS', 'SIN INTERNET'],
         shots_h='CAPTURAS', feat_h='LA CONSOLA',
         feats=[('Sonar pasivo y activo', 'Escucha sin ser oído. El ping da distancias exactas, pero te delata.'),
                ('Periscopio', 'La única vista real del exterior, y solo a cota 20 m.'),
@@ -158,7 +158,7 @@ D40 = {
         tag='SUBMARINE STEALTH', soon='COMING SOON TO GOOGLE PLAY AND THE APP STORE',
         intro=['You are the captain. From the command console you set the heading, the speed and the depth. Every sound you make can give you away.',
                "Depth 40 is a first-person stealth game set inside a submarine. You don't see the sea: you hear it. Sonar, periscope and instinct are all you have."],
-        pills=['8 MISSIONS', 'ENGLISH · ESPAÑOL', 'NO ADS', 'NO PURCHASES', 'NO INTERNET NEEDED'],
+        pills=['8 MISSIONS', 'ENGLISH · ESPAÑOL', '2 FREE MISSIONS', 'ONE-TIME PURCHASE', 'NO ADS', 'NO INTERNET NEEDED'],
         shots_h='SCREENSHOTS', feat_h='THE CONSOLE',
         feats=[('Passive and active sonar', 'Listen without being heard. A ping gives exact distances, but gives you away.'),
                ('Periscope', 'The only real view outside, and only at 20 m.'),
@@ -198,20 +198,22 @@ for lang, t in D40.items():
 PRIV = {
     'es': ('depth40/privacidad', 'Política de privacidad', 'Depth 40', f'Última actualización: {UPDATED["es"]}', [
         ('', 'Depth 40 es un juego desarrollado por Estudio Treso, marca de TRESO SPA (Santiago, Chile).'),
-        ('Datos que recopilamos', 'Ninguno. Depth 40 no pide registro, no usa cuentas, no muestra publicidad, no tiene compras dentro de la app y no envía información a internet.'),
+        ('Datos que recopilamos', 'Ninguno. Depth 40 no pide registro, no usa cuentas propias, no muestra publicidad y no nos envía información.'),
+        ('Compra del juego completo', 'Las misiones 1 y 2 son gratis; las demás se desbloquean con una compra única dentro de la app. El pago lo procesa la tienda (Google Play o App Store) con tu cuenta de esa tienda, según su propia política de privacidad. Nosotros no recibimos tus datos de pago: el juego solo le pregunta a la tienda si la compra existe para abrir las misiones.'),
         ('Datos guardados en tu dispositivo', 'El juego guarda en tu propio teléfono el idioma elegido, tus ajustes (música, efectos, vibración, color de pantalla) y las misiones cumplidas. Esa información no sale del dispositivo, no la recibimos y se borra al desinstalar el juego o al usar «Reiniciar progreso» en Ajustes.'),
         ('Permisos', 'Depth 40 no usa cámara, micrófono, ubicación, contactos ni otros datos personales. La vibración se usa solo como efecto del juego y puede apagarse en Ajustes.'),
-        ('Terceros', 'El juego no incluye servicios de análisis, publicidad ni otros servicios de terceros que recopilen datos.'),
+        ('Terceros', 'El juego no incluye servicios de análisis ni de publicidad. El único servicio externo es el sistema de compras de la tienda, usado solo para la compra del juego completo.'),
         ('Niños', 'El juego no está dirigido a menores de 13 años y no recopila datos de nadie.'),
         ('Cambios', 'Si esta política cambia, publicaremos la nueva versión en esta misma página con su fecha.'),
         ('Contacto', f'Para cualquier consulta sobre privacidad escríbenos a <a class="mail" href="mailto:{MAIL}">{MAIL}</a>'),
     ], '{up}depth40/privacy/', '/depth40/privacy/'),
     'en': ('depth40/privacy', 'Privacy Policy', 'Depth 40', f'Last updated: {UPDATED["en"]}', [
         ('', 'Depth 40 is a game developed by Estudio Treso, a brand of TRESO SPA (Santiago, Chile).'),
-        ('Data we collect', 'None. Depth 40 requires no sign-up, has no accounts, shows no ads, has no in-app purchases and sends no information over the internet.'),
+        ('Data we collect', 'None. Depth 40 requires no sign-up, has no accounts of its own, shows no ads and sends no information to us.'),
+        ('Full game purchase', 'Missions 1 and 2 are free; the rest are unlocked with a one-time in-app purchase. Payment is processed by the store (Google Play or the App Store) with your store account, under the store’s own privacy policy. We never receive your payment details: the game only asks the store whether the purchase exists in order to open the missions.'),
         ('Data stored on your device', 'The game stores on your own phone the language you chose, your settings (music, effects, vibration, screen color) and the missions you completed. This information never leaves the device, we never receive it, and it is deleted when you uninstall the game or use “Reset progress” in Settings.'),
         ('Permissions', 'Depth 40 does not use the camera, microphone, location, contacts or any other personal data. Vibration is used only as a game effect and can be turned off in Settings.'),
-        ('Third parties', 'The game includes no analytics, advertising or other third-party services that collect data.'),
+        ('Third parties', 'The game includes no analytics or advertising services. The only external service is the store’s billing system, used only for the full game purchase.'),
         ('Children', 'The game is not directed at children under 13 and collects no data from anyone.'),
         ('Changes', 'If this policy changes, we will publish the new version on this same page with its date.'),
         ('Contact', f'For any privacy question, write to us at <a class="mail" href="mailto:{MAIL}">{MAIL}</a>'),
@@ -235,7 +237,9 @@ SUP = {
         ('No se escucha nada.', 'Revisa que el teléfono no esté en silencio y que en AJUSTES estén encendidas la música y los efectos. El sonido empieza al primer toque en la pantalla.'),
         ('¿Cómo vuelvo a ver el tutorial?', 'En AJUSTES, toca «Ver tutorial». Cada misión también tiene el botón VER TUTORIAL en sus instrucciones.'),
         ('Perdí mi avance.', 'El avance se guarda solo en tu teléfono. Si desinstalas el juego o borras sus datos, se pierde. «Reiniciar progreso» en AJUSTES también lo borra.'),
-        ('¿Necesito internet?', 'No. Depth 40 funciona completo sin conexión.'),
+        ('¿Qué es gratis y qué se paga?', 'Las misiones 1 y 2 y el tutorial son gratis. Las misiones 3 a 8 se desbloquean con un pago único, sin anuncios ni suscripciones.'),
+        ('Ya pagué y las misiones siguen bloqueadas.', 'Abre el juego con internet, ve a MISIONES › OBTENER y toca RESTAURAR COMPRA. Usa la misma cuenta de Google con la que compraste. Si el pago quedó pendiente, se abrirá cuando la tienda lo confirme.'),
+        ('¿Necesito internet?', 'Solo para comprar o restaurar la compra. Para jugar, Depth 40 funciona sin conexión.'),
         ('Me detectan siempre. ¿Algún consejo?', 'Ve más lento, baja más hondo y usa el modo SILENCIO cuando te busquen. Bajo un témpano o bajo la capa de 100 m el sonar enemigo casi no te ve.'),
     ], '{up}depth40/support/', '/depth40/support/', 'PREGUNTAS FRECUENTES'),
     'en': ('depth40/support', 'Support', "Write to us and we'll get back to you as soon as possible. If it's a bug, tell us your phone model, the mission and what you were doing.", [
@@ -243,7 +247,9 @@ SUP = {
         ("I can't hear anything.", "Check that your phone isn't on silent and that music and effects are on in SETTINGS. Sound starts with your first tap on the screen."),
         ('How do I see the tutorial again?', 'In SETTINGS, tap “View tutorial”. Each mission briefing also has a VIEW TUTORIAL button.'),
         ('I lost my progress.', 'Progress is saved only on your phone. If you uninstall the game or clear its data, it is lost. “Reset progress” in SETTINGS also erases it.'),
-        ('Do I need an internet connection?', 'No. Depth 40 works fully offline.'),
+        ('What is free and what do I pay for?', 'Missions 1 and 2 and the tutorial are free. Missions 3 to 8 are unlocked with a one-time payment, with no ads or subscriptions.'),
+        ('I paid and the missions are still locked.', 'Open the game with an internet connection, go to MISSIONS › UNLOCK and tap RESTORE PURCHASE. Use the same Google account you bought it with. If the payment was pending, it will open once the store confirms it.'),
+        ('Do I need an internet connection?', 'Only to buy or restore the purchase. Depth 40 plays fully offline.'),
         ('I keep getting detected. Any tips?', 'Go slower, dive deeper and use SILENT mode when they hunt you. Under an ice floe or below the 100 m layer, enemy sonar can barely see you.'),
     ], '{up}depth40/soporte/', '/depth40/soporte/', 'FREQUENTLY ASKED QUESTIONS'),
 }
