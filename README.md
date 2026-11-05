@@ -13,3 +13,8 @@ Para agregar un juego o app: sumarlo a `CATALOG` en `build.py`, crear sus págin
 | Depth 40 | `/depth40/` | `/depth40/en/` |
 | Soporte | `/depth40/soporte/` | `/depth40/support/` |
 | Privacidad | `/depth40/privacidad/` | `/depth40/privacy/` |
+| Términos | `/depth40/terminos/` | `/depth40/terms/` |
+| Widget Design | `/widgetdesign/` | `/widgetdesign/en/` |
+| Soporte | `/widgetdesign/soporte/` | `/widgetdesign/support/` |
+| Privacidad | `/widgetdesign/privacidad/` | `/widgetdesign/privacy/` |
+| Términos | `/widgetdesign/terminos/` | `/widgetdesign/terms/` |

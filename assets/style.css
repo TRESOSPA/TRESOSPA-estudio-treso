@@ -93,3 +93,35 @@ body.game { background: var(--sea); color: var(--fog); }
   .game-card .pic { min-height: 0; aspect-ratio: 1024 / 500; }
   .studio h1 { margin-top: 28px; }
 }
+
+/* ---------- TRESO: Widget Design (mismos bloques que Depth 40, con los colores de la app) ---------- */
+.shots figure { margin: 0; scroll-snap-align: start; }
+.shots figcaption { margin-top: 8px; font-size: 11px; letter-spacing: 2px; color: var(--fog2); text-align: center; }
+.note { font-size: 13px; color: var(--fog2); max-width: 62ch; margin: 14px 0 0; }
+.prices b { font-size: 22px; }
+body.wd { --sea: #ECEBE7; --sea2: #DCDBD6; --fog: #2A2A28; --fog2: #5F5F5B; --cyan: #FF5A1F; --cyan2: #141414; --rule: #D0CFCA; background: var(--sea); color: var(--fog); }
+.wd h1, .wd .feat b, .wd .missions li, .wd .doc dt, .wd.game h1 { color: #141414; }
+.wd.game h1 { font-family: 'Fira Sans', system-ui, sans-serif; font-weight: 800; letter-spacing: 2px; }
+.wd.game h1 em { color: var(--cyan); text-shadow: none; }
+.wd.game h2, .wd .feat b { font-family: 'IBM Plex Mono', monospace; }
+.wd .feat div { background: #F6F5F2; }
+.wd .store { background: #141414; border-color: #141414; color: #F2F2F0; }
+.wd .store small, .wd .store span { color: #B9B9B5; }
+.wd .store:hover { background: #2A2A28; }
+.wd .store.off { background: transparent; border-color: #A3A39F; color: #2A2A28; }
+.wd .store.off small, .wd .store.off span { color: var(--fog2); }
+.wd .mini { color: var(--fog2); }
+.wd .mini img { filter: none; }
+.wd .lang:hover { border-color: #141414; color: #141414; }
+.wd .doc .mail { color: #141414; border-color: #141414; }
+.wd footer a { color: #141414; }
+.wd .shots img { border-color: var(--rule); }
+.wd .hero { background-color: var(--sea2); }
+.game-card.wd { background: #ECEBE7; color: #2A2A28; border: 1px solid #DCDBD6; }
+.game-card.wd .k { color: #5F5F5B; }
+.game-card.wd h2 { font-family: 'Fira Sans', sans-serif; font-weight: 800; letter-spacing: 2px; color: #141414; }
+.game-card.wd h2 em { color: #FF5A1F; }
+.game-card.wd p { color: #2A2A28; }
+.game-card.wd .go { border-color: #141414; color: #141414; font-family: 'IBM Plex Mono', monospace; }
+.game-card.wd:hover .go { background: #DCDBD6; }
+.game-card.wd .pic { background-position: center; }
