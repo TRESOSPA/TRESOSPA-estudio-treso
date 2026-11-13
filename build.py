@@ -113,8 +113,8 @@ def store_buttons(slug, lang):
 # Para agregar uno nuevo: sumarlo aquí y crear sus páginas abajo, igual que Depth 40.
 CATALOG = [
     dict(slug='depth40', kind={'es': 'JUEGO', 'en': 'GAME'}, name='DEPTH <em>40</em>', label='Depth 40', pic='d40-hero',
-         p={'es': 'Sigilo en submarino. Ocho misiones bajo el mar y el hielo, sin ver nunca el exterior: solo sonar, periscopio y silencio.',
-            'en': 'Submarine stealth. Eight missions under the sea and the ice, never seeing the outside: only sonar, periscope and silence.'},
+         p={'es': 'Sigilo en submarino. Ocho misiones bajo el mar y el hielo, guiado por el sonar y el periscopio, en silencio.',
+            'en': 'Submarine stealth. Eight missions under the sea and the ice, guided by sonar and periscope, in silence.'},
          ),
     dict(slug='widgetdesign', kind={'es': 'APP', 'en': 'APP'}, name='WIDGET <em>DESIGN</em>', label='TRESO: Widget Design', pic='wd-hero', cls=' wd',
          p={'es': 'Ocho estilos de widgets para tu pantalla de inicio. Cada uno es un kit de cuatro piezas que calzan entre sí: hora, clima, batería, agenda y más.',
