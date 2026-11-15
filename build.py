@@ -76,7 +76,7 @@ def game_footer(lang, slug='depth40'):
 #   Google Play: https://play.google.com/store/apps/details?id=cl.treso.depth40
 #   App Store:   https://apps.apple.com/app/id<número> (lo da App Store Connect)
 STORES = {
-    'depth40': {'android': None, 'ios': None},
+    'depth40': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.depth40', 'ios': None},
     'widgetdesign': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.widgetdesign', 'ios': None},
 }
 PLAT = {'android': ('Google Play', 'Android'), 'ios': ('App Store', 'iPhone')}
