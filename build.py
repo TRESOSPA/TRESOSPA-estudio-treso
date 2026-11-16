@@ -83,13 +83,21 @@ PLAT = {'android': ('Google Play', 'Android'), 'ios': ('App Store', 'iPhone')}
 
 
 def platforms_line(slug, lang):
+    """Una etiqueta por plataforma: DISPONIBLE EN ANDROID · IPHONE PRÓXIMAMENTE."""
     st = STORES[slug]
-    names = [PLAT[k][1] for k in ('android', 'ios') if k in st]
-    both = (' y ' if lang == 'es' else ' and ').join(names)
-    live = all(st[k] for k in st)
+    es = lang == 'es'
+    live = [PLAT[k][1] for k in ('android', 'ios') if k in st and st[k]]
+    soon = [PLAT[k][1] for k in ('android', 'ios') if k in st and not st[k]]
+    join = ' y ' if es else ' and '
+    parts = []
     if live:
-        return ('DISPONIBLE · ' if lang == 'es' else 'AVAILABLE · ') + both.upper()
-    return ('PRÓXIMAMENTE · ' if lang == 'es' else 'COMING SOON · ') + both.upper()
+        parts.append(('DISPONIBLE EN ' if es else 'AVAILABLE ON ') + join.join(live).upper())
+    if soon:
+        s = join.join(soon).upper()
+        parts.append((s + ' PRÓXIMAMENTE') if es else (s + ' COMING SOON') if live else ('COMING SOON · ' + s))
+        if es and not live:
+            parts[-1] = 'PRÓXIMAMENTE · ' + s
+    return ' · '.join(parts)
 
 
 def store_buttons(slug, lang):
@@ -153,32 +161,32 @@ for lang, t in STUDIO.items():
 # ---------------------------------------------------------------- Depth 40
 D40 = {
     'es': dict(
-        tag='SIGILO EN SUBMARINO', soon='PRÓXIMAMENTE EN GOOGLE PLAY Y APP STORE',
+        tag='SIGILO EN SUBMARINO',
         intro=['Eres el capitán. Desde la consola de mando decides el rumbo, la velocidad y la profundidad. Cada ruido que haces puede delatarte.',
-               'Depth 40 es un juego de sigilo en primera persona dentro de un submarino. No ves el mar: lo escuchas. El sonar, el periscopio y tu instinto son lo único que tienes.'],
-        pills=['8 MISIONES', 'ESPAÑOL · ENGLISH', '2 MISIONES GRATIS', 'PAGO ÚNICO', 'SIN ANUNCIOS', 'SIN INTERNET'],
+               'Depth 40 es un juego de sigilo en primera persona dentro de un submarino. Nunca lo ves desde afuera: todo lo que sabes del mar te llega por el sonar, el periscopio y tu instinto.'],
+        pills=['8 MISIONES', 'ESPAÑOL · ENGLISH', '2 MISIONES GRATIS', 'PAGO ÚNICO', 'SIN ANUNCIOS', 'JUEGA SIN INTERNET'],
         shots_h='CAPTURAS', feat_h='LA CONSOLA',
         feats=[('Sonar pasivo y activo', 'Escucha sin ser oído. El ping da distancias exactas, pero te delata.'),
-               ('Periscopio', 'La única vista real del exterior, y solo a cota 20 m.'),
-               ('Modo silencio', 'Apaga todo lo que hace ruido y espera a que el enemigo se rinda.'),
+               ('Periscopio', 'La única vista real del exterior, y solo a cota 20 m. De noche, con visión nocturna.'),
+               ('Modo silencio', 'Apaga todo lo que hace ruido y espera a que el enemigo deje de buscarte.'),
                ('Armas', 'Torpedos rectos y filoguiados, misil, señuelos y ametralladora.')],
         mis_h='PRIMERA TEMPORADA', mis=['Aguas ajenas', 'Blanco quieto', 'Blanco en movimiento', 'Cazador', 'Rescate bajo el hielo', 'Pesqueros', 'Señuelo', 'Orden sellada'],
-        alt='Capturas de Depth 40', shots=['inicio', 'misiones', 'brief', 'consola', 'hielo'],
-        shot_alt=['Menú principal', 'Archivador de misiones', 'Instrucciones de la misión 4', 'Consola de mando', 'Misión 8 bajo el hielo'],
+        alt='Capturas de Depth 40', shots=['inicio', 'periscopio', 'nocturna', 'consola', 'misiones', 'brief', 'hielo'],
+        shot_alt=['Menú principal', 'Periscopio frente a la base naval enemiga', 'Periscopio con visión nocturna leyendo el casco de un pesquero', 'Consola de mando', 'Archivador de misiones', 'Instrucciones de la misión 4', 'Misión 8 bajo el hielo'],
         desc='Depth 40: sigilo en submarino. Ocho misiones para Android y iPhone. Un juego de Estudio Treso.'),
     'en': dict(
-        tag='SUBMARINE STEALTH', soon='COMING SOON TO GOOGLE PLAY AND THE APP STORE',
+        tag='SUBMARINE STEALTH',
         intro=['You are the captain. From the command console you set the heading, the speed and the depth. Every sound you make can give you away.',
-               "Depth 40 is a first-person stealth game set inside a submarine. You don't see the sea: you hear it. Sonar, periscope and instinct are all you have."],
+               "Depth 40 is a first-person stealth game set inside a submarine. You never see it from outside: everything you know about the sea comes through sonar, periscope and instinct."],
         pills=['8 MISSIONS', 'ENGLISH · ESPAÑOL', '2 FREE MISSIONS', 'ONE-TIME PURCHASE', 'NO ADS', 'NO INTERNET NEEDED'],
         shots_h='SCREENSHOTS', feat_h='THE CONSOLE',
         feats=[('Passive and active sonar', 'Listen without being heard. A ping gives exact distances, but gives you away.'),
-               ('Periscope', 'The only real view outside, and only at 20 m.'),
+               ('Periscope', 'The only real view outside, and only at 20 m. At night, with night vision.'),
                ('Silent running', 'Shut down everything that makes noise and wait for the enemy to give up.'),
                ('Weapons', 'Straight and wire-guided torpedoes, a missile, decoys and a machine gun.')],
         mis_h='SEASON ONE', mis=['Foreign waters', 'Still target', 'Moving target', 'Hunter', 'Rescue under the ice', 'Fishing boats', 'Decoy', 'Sealed order'],
-        alt='Depth 40 screenshots', shots=['inicio', 'misiones', 'brief', 'consola', 'hielo'],
-        shot_alt=['Main menu', 'Mission files', 'Mission 4 briefing', 'Command console', 'Mission 8 under the ice'],
+        alt='Depth 40 screenshots', shots=['inicio', 'periscopio', 'nocturna', 'consola', 'misiones', 'brief', 'hielo'],
+        shot_alt=['Main menu', 'Periscope facing the enemy naval base', 'Night-vision periscope reading a fishing boat hull', 'Command console', 'Mission files', 'Mission 4 briefing', 'Mission 8 under the ice'],
         desc='Depth 40: submarine stealth. Eight missions for Android and iPhone. A game by Estudio Treso.'),
 }
 for lang, t in D40.items():
