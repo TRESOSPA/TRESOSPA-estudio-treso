@@ -126,14 +126,14 @@ body.wd { --sea: #ECEBE7; --sea2: #DCDBD6; --fog: #2A2A28; --fog2: #5F5F5B; --cy
 .game-card.wd:hover .go { background: #DCDBD6; }
 .game-card.wd .pic { background-position: center; }
 
-/* ---------- 12/12: Diario de cultivo (gris claro, tinta negra y acento rojo, como la app) ---------- */
-body.dd { --sea: #E4E4E2; --sea2: #D9D9D6; --fog: #2A2A28; --fog2: #5C5C5A; --cyan: #E5322D; --cyan2: #111111; --rule: #CFCFCB; background: var(--sea); color: var(--fog); font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+/* ---------- 12/12: Diario de cultivo (blanco, tinta negra y acento rojo, como la app) ---------- */
+body.dd { --sea: #FFFFFF; --sea2: #F2F2F0; --fog: #2A2A28; --fog2: #5C5C5A; --cyan: #E5322D; --cyan2: #111111; --rule: #CFCFCB; background: var(--sea); color: var(--fog); font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 .dd h1, .dd .feat b, .dd .doc dt, .dd.game h1 { color: #111111; }
 .dd.game h1 { font-family: 'Inter', system-ui, sans-serif; font-weight: 700; letter-spacing: -3px; font-size: clamp(52px, 11vw, 84px); }
 .dd.game h1 em { color: var(--cyan); text-shadow: none; }
 .dd.game h2, .dd .tag, .dd .pill, .dd .mini, .dd .lang, .dd .shots figcaption { font-family: 'Inter', system-ui, sans-serif; font-weight: 500; }
 .dd .feat b { font-family: 'Inter', system-ui, sans-serif; font-weight: 700; letter-spacing: -0.2px; font-size: 17px; }
-.dd .feat div { background: #EEEEEC; border: 0; border-radius: 18px; padding: 18px; }
+.dd .feat div { background: #F2F2F0; border: 0; border-radius: 18px; padding: 18px; }
 .dd .hero { border-radius: 22px; background-color: var(--sea2); }
 .dd .shots img { border-radius: 18px; border-color: var(--rule); }
 .dd .pill { border-color: var(--rule); color: var(--fog2); }
@@ -149,11 +149,11 @@ body.dd { --sea: #E4E4E2; --sea2: #D9D9D6; --fog: #2A2A28; --fog2: #5C5C5A; --cy
 .dd .doc h1 { letter-spacing: -0.5px; }
 .dd .doc .mail { color: #111111; border-color: #111111; border-radius: 12px; }
 .dd footer a { color: #111111; }
-.game-card.dd { background: #E4E4E2; color: #2A2A28; border: 1px solid #D9D9D6; }
+.game-card.dd { background: #FFFFFF; color: #2A2A28; border: 1px solid #E4E4E2; }
 .game-card.dd .k { color: #5C5C5A; }
 .game-card.dd h2 { font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -1px; color: #111111; }
 .game-card.dd h2 em { font-style: normal; color: #E5322D; }
 .game-card.dd p { color: #2A2A28; font-family: 'Inter', sans-serif; }
 .game-card.dd .go { border-color: #111111; color: #111111; font-family: 'Inter', sans-serif; font-weight: 500; border-radius: 12px; }
-.game-card.dd:hover .go { background: #D9D9D6; }
-.game-card.dd .pic { background-position: left center; }
+.game-card.dd:hover .go { background: #F2F2F0; }
+.game-card.dd .pic { background-position: center; }

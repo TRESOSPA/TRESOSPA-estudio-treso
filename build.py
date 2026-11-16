@@ -131,7 +131,7 @@ CATALOG = [
          p={'es': 'Ocho estilos de widgets para tu pantalla de inicio. Cada uno es un kit de cuatro piezas que calzan entre sí: hora, clima, batería, agenda y más.',
             'en': 'Eight widget styles for your Home Screen. Each one is a kit of four pieces that fit together: time, weather, battery, calendar and more.'},
          ),
-    dict(slug='doce12', kind={'es': 'APP', 'en': 'APP'}, name='12<em>/</em>12', label='12/12: Diario de cultivo', pic='dd-hero', cls=' dd',
+    dict(slug='doce12', kind={'es': 'APP', 'en': 'APP'}, name='12<em>/</em>12', label='12/12: Diario de cultivo', pic='dd-card', cls=' dd',
          p={'es': 'Diario de cultivo para carpas indoor. Tu carpa a escala, una bitácora de riegos, clima, luz y fotos, el avance del ciclo hasta la cosecha y un medidor de luz con el sensor del teléfono.',
             'en': 'A grow diary for indoor tents. Your tent to scale, a logbook of waterings, climate, light and photos, cycle progress up to harvest and a light meter using your phone’s sensor.'},
          ),
