@@ -18,3 +18,7 @@ Para agregar un juego o app: sumarlo a `CATALOG` en `build.py`, crear sus págin
 | Soporte | `/widgetdesign/soporte/` | `/widgetdesign/support/` |
 | Privacidad | `/widgetdesign/privacidad/` | `/widgetdesign/privacy/` |
 | Términos | `/widgetdesign/terminos/` | `/widgetdesign/terms/` |
+| 12/12 | `/doce12/` | `/doce12/en/` |
+| Soporte | `/doce12/soporte/` | `/doce12/support/` |
+| Privacidad | `/doce12/privacidad/` | `/doce12/privacy/` |
+| Términos | `/doce12/terminos/` | `/doce12/terms/` |

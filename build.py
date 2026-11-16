@@ -6,9 +6,10 @@ MAIL = 'contacto@treso.cl'
 SITE = 'https://estudio.treso.cl'
 UPDATED = {'es': '3 de noviembre de 2026', 'en': 'November 3, 2026'}
 UPDATED_WD = {'es': '5 de noviembre de 2026', 'en': 'November 5, 2026'}
+UPDATED_DD = {'es': '16 de noviembre de 2026', 'en': 'November 16, 2026'}
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Fira+Sans:wght@400;500;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">')
+         '<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;700&family=Fira+Sans:wght@400;500;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">')
 
 
 def page(path, lang, title, desc, body_class, body, alt_href, depth, og='d40-hero'):
@@ -56,7 +57,7 @@ def game_bar(lang, alt):
 </header></div>'''
 
 
-PRODUCT_NAME = {'depth40': 'Depth 40', 'widgetdesign': 'Widget Design'}
+PRODUCT_NAME = {'depth40': 'Depth 40', 'widgetdesign': 'Widget Design', 'doce12': '12/12'}
 
 
 def game_footer(lang, slug='depth40'):
@@ -78,6 +79,8 @@ def game_footer(lang, slug='depth40'):
 STORES = {
     'depth40': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.depth40', 'ios': None},
     'widgetdesign': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.widgetdesign', 'ios': None},
+    # 12/12: cuando Google Play la publique → 'https://play.google.com/store/apps/details?id=cl.treso.doce12'
+    'doce12': {'android': None, 'ios': None},
 }
 PLAT = {'android': ('Google Play', 'Android'), 'ios': ('App Store', 'iPhone')}
 
@@ -127,6 +130,10 @@ CATALOG = [
     dict(slug='widgetdesign', kind={'es': 'APP', 'en': 'APP'}, name='WIDGET <em>DESIGN</em>', label='TRESO: Widget Design', pic='wd-hero', cls=' wd',
          p={'es': 'Ocho estilos de widgets para tu pantalla de inicio. Cada uno es un kit de cuatro piezas que calzan entre sí: hora, clima, batería, agenda y más.',
             'en': 'Eight widget styles for your Home Screen. Each one is a kit of four pieces that fit together: time, weather, battery, calendar and more.'},
+         ),
+    dict(slug='doce12', kind={'es': 'APP', 'en': 'APP'}, name='12<em>/</em>12', label='12/12: Diario de cultivo', pic='dd-hero', cls=' dd',
+         p={'es': 'Diario de cultivo para carpas indoor. Tu carpa a escala, una bitácora de riegos, clima, luz y fotos, el avance del ciclo hasta la cosecha y un medidor de luz con el sensor del teléfono.',
+            'en': 'A grow diary for indoor tents. Your tent to scale, a logbook of waterings, climate, light and photos, cycle progress up to harvest and a light meter using your phone’s sensor.'},
          ),
 ]
 STUDIO = {
@@ -429,6 +436,138 @@ for lang, (path, h1, lead, faq, alt_abs, faq_h) in WD_SUP.items():
     page(path, lang, f'{h1} · Widget Design', f'{h1} · TRESO: Widget Design · Estudio Treso', 'game wd', body, alt_abs, 2, og='wd-hero')
 
 
+# ================================================================ 12/12: Diario de cultivo
+DD_SHOTS = [('inicio', 'Inicio', 'Welcome'), ('carpas', 'Mis carpas', 'My tents'), ('proyecto', 'Proyecto', 'Project'), ('bitacora', 'Bitácora', 'Logbook'),
+            ('medidor', 'Medidor de luz', 'Light meter'), ('carpa', 'Tu carpa', 'Your tent'), ('informe', 'Informe', 'Report'), ('noche', 'Modo noche', 'Night mode')]
+DD = {
+    'es': dict(
+        tag='DIARIO DE CULTIVO PARA CARPAS INDOOR',
+        intro=['Lleva tu cultivo de interior día a día. Arma tu carpa con sus medidas, luces y plantas, y anota riegos, pH, EC, clima, podas y fotos en una bitácora ordenada por semana.',
+               'La app calcula el avance del ciclo, te muestra cuánto falta para que se apague la luz, estima la cosecha y mide la luz con el sensor de tu teléfono. Al final te queda un informe con gráficos y fotos de todo el cultivo.'],
+        pills=['PAGO ÚNICO', 'SIN ANUNCIOS', 'SIN SUSCRIPCIÓN', 'SIN CUENTA', 'FUNCIONA SIN INTERNET', 'ESPAÑOL · ENGLISH', '+18'],
+        shots_h='CAPTURAS', feat_h='QUÉ HACE',
+        feats=[('Tu carpa a escala', 'Medidas, sustrato, lámparas y plantas que mueves y ordenas como en tu carpa real.'),
+               ('Bitácora', 'Riego con pH y EC, clima con VPD, luz, horario, etapa, podas, trasplantes, problemas y notas, con fotos.'),
+               ('Reloj de luz', 'Horario 18/6, 12/12 o el tuyo, con la cuenta regresiva hasta que la luz se apaga. La app se pone oscura cuando tu carpa está a oscuras.'),
+               ('Avance y cosecha', 'Porcentaje del ciclo, días en floración y fecha estimada de cosecha, que puedes ajustar.'),
+               ('Medidor de luz', 'PPFD y DLI aproximados con el sensor del teléfono, según tu tipo de lámpara, con calibración.'),
+               ('Recordatorios', 'Riego, revisión de plagas o lo que necesites, con aviso en el teléfono.'),
+               ('Nutrientes', 'Tu lista de productos y dosis, a un toque en cada riego, con consejos generales por etapa.'),
+               ('Informe final', 'Etapas, fechas clave, gráficos de pH, EC, clima y luz, y tus fotos. Para compartir o guardar.')],
+        note='El medidor de luz es aproximado: un teléfono no reemplaza un medidor PAR profesional. Los rangos y consejos de la app son referencias generales. App para mayores de 18 años; respeta las leyes de tu país sobre cultivo.',
+        alt='Capturas de 12/12', desc='12/12: diario de cultivo para carpas indoor, con bitácora, avance hasta la cosecha y medidor de luz. Para Android y iPhone. Una app de Estudio Treso.'),
+    'en': dict(
+        tag='GROW DIARY FOR INDOOR TENTS',
+        intro=['Follow your indoor grow day by day. Set up your tent with its size, lights and plants, and log waterings, pH, EC, climate, training and photos in a logbook sorted by week.',
+               'The app tracks cycle progress, shows how long until lights off, estimates harvest and measures light with your phone’s sensor. At the end you get a report with charts and photos of the whole grow.'],
+        pills=['ONE-TIME PURCHASE', 'NO ADS', 'NO SUBSCRIPTION', 'NO ACCOUNT', 'WORKS OFFLINE', 'ENGLISH · ESPAÑOL', '18+'],
+        shots_h='SCREENSHOTS', feat_h='WHAT IT DOES',
+        feats=[('Your tent to scale', 'Size, medium, lamps and plants you move and arrange just like in your real tent.'),
+               ('Logbook', 'Watering with pH and EC, climate with VPD, light, schedule, stage, training, transplants, issues and notes, with photos.'),
+               ('Light clock', '18/6, 12/12 or your own schedule, with a countdown to lights off. The app goes dark when your tent does.'),
+               ('Progress and harvest', 'Cycle percentage, days in flower and an estimated harvest date you can adjust.'),
+               ('Light meter', 'Approximate PPFD and DLI from your phone’s sensor, by lamp type, with calibration.'),
+               ('Reminders', 'Watering, pest checks or anything you need, with a notification on your phone.'),
+               ('Nutrients', 'Your own list of products and doses, one tap on each watering, with general tips by stage.'),
+               ('Final report', 'Stages, key dates, pH, EC, climate and light charts, and your photos. Ready to share or save.')],
+        note='The light meter is approximate: a phone does not replace a professional PAR meter. The app’s ranges and tips are general references. For ages 18+; follow your country’s laws on growing.',
+        alt='12/12 screenshots', desc='12/12: a grow diary for indoor tents, with a logbook, progress to harvest and a light meter. For Android and iPhone. An app by Estudio Treso.'),
+}
+for lang, t in DD.items():
+    path = 'doce12' if lang == 'es' else 'doce12/en'
+    alt = '{up}doce12/en/' if lang == 'es' else '{up}doce12/'
+    shots = ''.join(f'<figure><img src="{{up}}assets/dd-{k}-{lang}.jpg" width="540" height="1080" loading="lazy" alt="{es if lang == "es" else en}"><figcaption>{(es if lang == "es" else en).upper()}</figcaption></figure>'
+                    for k, es, en in DD_SHOTS)
+    feats = ''.join(f'<div><b>{a}</b><span>{b}</span></div>' for a, b in t['feats'])
+    pills = ''.join(f'<span class="pill">{p}</span>' for p in t['pills'])
+    body = game_bar(lang, alt) + f"""
+<main id="main" class="wrap">
+  <div class="hero" style="background-image:url('{{up}}assets/dd-hero-{lang}.jpg')" role="img" aria-label="12/12"></div>
+  <h1>12<em>/</em>12</h1>
+  <p class="tag">{t['tag']}</p>
+  {''.join(f'<p class="intro">{p}</p>' for p in t['intro'])}
+  {store_buttons('doce12', lang)}
+  <div class="pills">{pills}</div>
+  <h2>{t['shots_h']}</h2>
+  <div class="shots" role="group" aria-label="{t['alt']}" tabindex="0">{shots}</div>
+  <h2>{t['feat_h']}</h2>
+  <div class="feat">{feats}</div>
+  <p class="note">{t['note']}</p>
+</main>
+""" + game_footer(lang, 'doce12')
+    page(path, lang, '12/12: ' + ('Diario de cultivo' if lang == 'es' else 'Grow Diary') + ' · Estudio Treso', t['desc'], 'game dd', body, '/doce12/en/' if lang == 'es' else '/doce12/', 1 if lang == 'es' else 2, og='dd-hero')
+
+DD_PRIV = {
+    'es': ('doce12/privacidad', 'Política de privacidad', f'Última actualización: {UPDATED_DD["es"]}', [
+        ('', '12/12: Diario de cultivo es una app desarrollada por Estudio Treso, marca de TRESO SPA (Santiago, Chile).'),
+        ('Datos que recopilamos', 'Ninguno. La app no pide registro, no tiene cuentas, no muestra publicidad, no usa servicios de análisis y no nos envía información. Funciona sin internet y no tenemos servidores que reciban tus datos.'),
+        ('Datos guardados en tu dispositivo', 'Todo lo que registras queda en el almacenamiento privado de la app en tu teléfono: tus proyectos (nombre, medidas, luces, plantas), la bitácora, los recordatorios, tu lista de nutrientes, tus ajustes, tu calibración del medidor y las fotos que agregues. Nada de eso sale del teléfono, salvo que tú compartas un informe. Se borra al desinstalar la app.'),
+        ('Fotos', 'Cuando agregas una foto, la eliges tú con el selector del sistema o la cámara, y la app guarda una copia dentro de su propio espacio. La app no recorre ni lee el resto de tu galería.'),
+        ('Sensor de luz y modelo del teléfono', 'El medidor lee el sensor de luz ambiental del teléfono solo mientras tienes abierta esa pantalla. La app también lee el modelo de tu teléfono y el nombre del sensor para aplicar una calibración de fábrica cuando existe para ese modelo. Todo se procesa en el teléfono y no lo recibimos.'),
+        ('Notificaciones', 'Los recordatorios usan notificaciones locales, programadas en tu propio teléfono. El permiso es opcional: si no lo das, todo lo demás funciona igual. Puedes quitarlo cuando quieras en los ajustes de tu teléfono.'),
+        ('Compartir un informe', 'Si decides compartir o guardar el informe de un cultivo, la app usa el menú de compartir de tu teléfono. Lo que envíes a otra app queda sujeto a la política de privacidad de esa app.'),
+        ('Compra de la app', 'La compra la procesa la tienda (Google Play o App Store) con tu cuenta de esa tienda, según su propia política de privacidad. Nosotros no recibimos tus datos de pago.'),
+        ('Edad', 'La app es para mayores de 18 años y no recopila datos de nadie.'),
+        ('Cambios', 'Si esta política cambia, publicaremos la nueva versión en esta misma página con su fecha.'),
+        ('Contacto', f'Para cualquier consulta sobre privacidad escríbenos a <a class="mail" href="mailto:{MAIL}">{MAIL}</a>'),
+    ], '/doce12/privacy/'),
+    'en': ('doce12/privacy', 'Privacy Policy', f'Last updated: {UPDATED_DD["en"]}', [
+        ('', '12/12: Grow Diary is an app developed by Estudio Treso, a brand of TRESO SPA (Santiago, Chile).'),
+        ('Data we collect', 'None. The app requires no sign-up, has no accounts, shows no ads, uses no analytics services and sends no information to us. It works offline and we have no servers that receive your data.'),
+        ('Data stored on your device', 'Everything you log stays in the app’s private storage on your phone: your projects (name, size, lights, plants), the logbook, reminders, your nutrient list, your settings, your light meter calibration and the photos you add. None of it leaves the phone unless you share a report. It is deleted when you uninstall the app.'),
+        ('Photos', 'When you add a photo, you pick it yourself with the system picker or the camera, and the app keeps a copy in its own storage. The app does not browse or read the rest of your gallery.'),
+        ('Light sensor and phone model', 'The meter reads your phone’s ambient light sensor only while that screen is open. The app also reads your phone model and the sensor name to apply a factory calibration when one exists for that model. Everything is processed on the phone and we never receive it.'),
+        ('Notifications', 'Reminders use local notifications scheduled on your own phone. The permission is optional: if you don’t grant it, everything else works the same. You can remove it at any time in your phone settings.'),
+        ('Sharing a report', 'If you choose to share or save a grow report, the app uses your phone’s share menu. Whatever you send to another app is subject to that app’s privacy policy.'),
+        ('App purchase', 'The purchase is processed by the store (Google Play or the App Store) with your store account, under the store’s own privacy policy. We never receive your payment details.'),
+        ('Age', 'The app is intended for adults aged 18 and over and collects no data from anyone.'),
+        ('Changes', 'If this policy changes, we will publish the new version on this same page with its date.'),
+        ('Contact', f'For any privacy question, write to us at <a class="mail" href="mailto:{MAIL}">{MAIL}</a>'),
+    ], '/doce12/privacidad/'),
+}
+for lang, (path, h1, meta, secs, alt_abs) in DD_PRIV.items():
+    doc_page('doce12', lang, path, h1, meta, secs, alt_abs, 'game dd', 'dd-hero')
+
+DD_SUP = {
+    'es': ('doce12/soporte', 'Soporte', 'Escríbenos y te respondemos lo antes posible. Si es un error, cuéntanos el modelo de tu teléfono, la pantalla y qué estabas haciendo.', [
+        ('¿Qué significa 12/12?', 'Es el horario de 12 horas de luz y 12 de oscuridad que se usa para que las plantas fotoperiódicas pasen a floración. Las automáticas florecen solas, sin cambiar el horario.'),
+        ('¿Qué tan exacto es el medidor de luz?', 'Es aproximado. El teléfono mide lux y la app los convierte a PPFD según tu tipo de lámpara, y cada modelo de teléfono mide distinto. Para afinarlo, mide en el mismo punto con un medidor de verdad (o una app de referencia) y usa «Calibrar con otro medidor» en la pantalla Medir luz.'),
+        ('¿Cómo mido bien?', 'Pon el teléfono horizontal, con la pantalla hacia la lámpara, a la altura de las puntas de las plantas, y déjalo quieto unos segundos. El sensor suele estar arriba de la pantalla, cerca de la cámara frontal: no lo tapes con el dedo. En Android no uses papel encima del sensor.'),
+        ('Mi cultivo ya empezó. ¿Puedo agregarlo?', 'Sí. Al crear el proyecto elige «Ya empezó» y pon la fecha de inicio. Si ya está en 12/12, la app te pregunta desde cuándo para calcular el avance y la cosecha.'),
+        ('¿Cómo paso a floración?', 'En el proyecto toca «Pasar a floración». También puedes registrar el cambio de horario a 12/12. La fecha estimada de cosecha se ajusta sola, y también puedes cambiarla a mano.'),
+        ('¿Cómo muevo o edito las plantas?', 'En el proyecto, abre los ajustes del proyecto y toca «Editar proyecto». Los cambios quedan anotados en la bitácora.'),
+        ('No me llegan los recordatorios.', 'Revisa que la app tenga permiso de notificaciones. Algunos teléfonos, por ejemplo los Samsung, detienen las apps para ahorrar batería: en los ajustes del teléfono, quita 12/12 de las apps suspendidas o del ahorro de batería.'),
+        ('No puedo agregar fotos.', 'Actualiza la app a la última versión. Si sigue pasando, escríbenos con el modelo de tu teléfono.'),
+        ('¿Dónde se guardan mis datos?', 'Solo en tu teléfono. Si desinstalas la app o borras sus datos, se pierden. Estamos preparando una opción de respaldo para una próxima versión.'),
+        ('¿Cómo cambio el color o el idioma?', 'En Ajustes. En modo automático la app es clara cuando la luz de tu carpa está encendida y oscura cuando está apagada; también puedes dejarla siempre clara u oscura. El idioma se cambia con ES / EN arriba.'),
+    ], '/doce12/support/', 'PREGUNTAS FRECUENTES'),
+    'en': ('doce12/support', 'Support', "Write to us and we'll get back to you as soon as possible. If it's a bug, tell us your phone model, the screen and what you were doing.", [
+        ('What does 12/12 mean?', 'It is the 12 hours on, 12 hours off light schedule used to switch photoperiod plants into flowering. Autoflowers bloom on their own, without changing the schedule.'),
+        ('How accurate is the light meter?', 'It is approximate. The phone measures lux and the app converts it to PPFD by lamp type, and every phone model reads differently. To fine-tune it, measure at the same spot with a real meter (or a reference app) and use “Calibrate with another meter” on the Measure light screen.'),
+        ('How do I measure properly?', 'Hold the phone flat, screen facing the lamp, at the height of the plant tops, and keep it still for a few seconds. The sensor is usually above the screen, near the front camera: don’t cover it with your finger. On Android, don’t put paper over the sensor.'),
+        ('My grow has already started. Can I add it?', 'Yes. When creating the project choose “Already started” and enter the start date. If it is already on 12/12, the app asks since when so it can work out progress and harvest.'),
+        ('How do I switch to flowering?', 'In the project tap “Switch to flowering”. You can also log the schedule change to 12/12. The estimated harvest date updates on its own, and you can also change it by hand.'),
+        ('How do I move or edit plants?', 'In the project, open the project settings and tap “Edit project”. Changes are noted in the logbook.'),
+        ("I don't get reminders.", 'Check that the app has notification permission. Some phones, Samsung for example, stop apps to save battery: in your phone settings, remove 12/12 from sleeping apps or battery saving.'),
+        ("I can't add photos.", 'Update the app to the latest version. If it keeps happening, write to us with your phone model.'),
+        ('Where is my data stored?', 'Only on your phone. If you uninstall the app or clear its data, it is lost. We are working on a backup option for an upcoming version.'),
+        ('How do I change the color or the language?', 'In Settings. In automatic mode the app is light while your tent lights are on and dark while they are off; you can also keep it always light or dark. Switch the language with ES / EN at the top.'),
+    ], '/doce12/soporte/', 'FREQUENTLY ASKED QUESTIONS'),
+}
+for lang, (path, h1, lead, faq, alt_abs, faq_h) in DD_SUP.items():
+    dl = ''.join(f'<dt>{q}</dt><dd>{a}</dd>' for q, a in faq)
+    body = game_bar(lang, '{up}' + alt_abs.lstrip('/')) + f"""
+<main id="main" class="wrap doc">
+  <h1>{h1.upper()} · 12/12</h1>
+  <p>{lead}</p>
+  <p><a class="mail" href="mailto:{MAIL}?subject=12%2F12">{MAIL}</a></p>
+  <h2>{faq_h}</h2>
+  <dl>{dl}</dl>
+</main>
+""" + game_footer(lang, 'doce12')
+    page(path, lang, f'{h1} · 12/12', f'{h1} · 12/12 · Estudio Treso', 'game dd', body, alt_abs, 2, og='dd-hero')
+
+
 # ================================================================ Términos del servicio (Depth 40 y Widget Design)
 def terms(lang, name, what, buy, extra):
     if lang == 'es':
@@ -483,3 +622,26 @@ for slug, klass, og, name, what, buy, extra in TERMS:
         doc_page(slug, lang, path, 'Términos del servicio' if lang == 'es' else 'Terms of Service',
                  ('Última actualización: ' if lang == 'es' else 'Last updated: ') + upd,
                  terms(lang, name, what[lang], buy[lang], extra[lang]), alt_abs, klass, og)
+
+
+# 12/12 es una app pagada (sin compras dentro de la app): se cambian esas dos secciones de los términos generales.
+DD_TERMS_BUY = {
+    'es': [('Compra de la app', '12/12 se compra con un pago único en la tienda (Google Play o App Store). No tiene compras dentro de la app, anuncios ni suscripción. El precio se muestra en la tienda, en tu moneda, antes de pagar. La compra queda asociada a tu cuenta de la tienda: puedes volver a instalar la app sin pagar de nuevo usando la misma cuenta.'),
+           ('Pagos y reembolsos', 'Los pagos los procesa Google Play o la App Store. Los reembolsos se rigen por las políticas de esa tienda; si tienes un problema con tu compra, escríbenos y te ayudamos.')],
+    'en': [('App purchase', '12/12 is bought with a one-time payment in the store (Google Play or the App Store). It has no in-app purchases, ads or subscription. The price is shown in the store, in your currency, before you pay. The purchase is tied to your store account: you can reinstall the app without paying again using the same account.'),
+           ('Payments and refunds', 'Payments are processed by Google Play or the App Store. Refunds are governed by that store’s policies; if you have a problem with your purchase, write to us and we will help.')],
+}
+DD_TERMS_EXTRA = {
+    'es': [('Mayoría de edad y uso responsable', 'La app es para mayores de 18 años. Es una herramienta para llevar el registro de tu propio cultivo de plantas; no promueve ni facilita actividades ilegales. Eres responsable de cumplir las leyes de tu país sobre el cultivo.'),
+           ('Información de referencia', 'Las mediciones de luz son aproximadas y dependen del sensor de cada teléfono. Los rangos, fechas estimadas y consejos de la app son referencias generales: no reemplazan un instrumento profesional, el consejo de un experto ni las instrucciones de los fabricantes de tus productos.'),
+           ('Tus registros', 'Tus registros y fotos se guardan solo en tu teléfono. No tenemos copia de ellos y no podemos recuperarlos si se pierden.')],
+    'en': [('Age and responsible use', 'The app is intended for adults aged 18 and over. It is a tool to keep a record of your own plant grow; it does not promote or facilitate illegal activity. You are responsible for complying with your country’s laws on growing.'),
+           ('Reference information', 'Light readings are approximate and depend on each phone’s sensor. The app’s ranges, estimated dates and tips are general references: they do not replace a professional instrument, expert advice or the instructions from the makers of your products.'),
+           ('Your records', 'Your records and photos are stored only on your phone. We keep no copy of them and cannot recover them if they are lost.')],
+}
+for lang in ('es', 'en'):
+    secs = terms(lang, '12/12', 'una app de registro de cultivo' if lang == 'es' else 'a grow-logging app', '', DD_TERMS_EXTRA[lang])
+    secs[2:4] = DD_TERMS_BUY[lang]
+    doc_page('doce12', lang, 'doce12/terminos' if lang == 'es' else 'doce12/terms', 'Términos del servicio' if lang == 'es' else 'Terms of Service',
+             ('Última actualización: ' if lang == 'es' else 'Last updated: ') + UPDATED_DD[lang], secs,
+             '/doce12/terms/' if lang == 'es' else '/doce12/terminos/', 'game dd', 'dd-hero')
