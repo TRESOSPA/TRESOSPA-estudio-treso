@@ -22,3 +22,9 @@ Para agregar un juego o app: sumarlo a `CATALOG` en `build.py`, crear sus págin
 | Soporte | `/doce12/soporte/` | `/doce12/support/` |
 | Privacidad | `/doce12/privacidad/` | `/doce12/privacy/` |
 | Términos | `/doce12/terminos/` | `/doce12/terms/` |
+| My Kardek | `/kardek/` | `/kardek/en/` |
+| Soporte | `/kardek/soporte/` | `/kardek/support/` |
+| Privacidad | `/kardek/privacidad/` | `/kardek/privacy/` |
+| Términos | `/kardek/terminos/` | `/kardek/terms/` |
+
+Capturas de My Kardek (`assets/mk-*`): se generan desde la app (repo Fichero_treso) abriéndola con `?demo`, con las letras del APK.

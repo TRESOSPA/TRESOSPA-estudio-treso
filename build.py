@@ -7,9 +7,10 @@ SITE = 'https://estudio.treso.cl'
 UPDATED = {'es': '3 de noviembre de 2026', 'en': 'November 3, 2026'}
 UPDATED_WD = {'es': '5 de noviembre de 2026', 'en': 'November 5, 2026'}
 UPDATED_DD = {'es': '16 de noviembre de 2026', 'en': 'November 16, 2026'}
+UPDATED_MK = {'es': '16 de noviembre de 2026', 'en': 'November 16, 2026'}
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;700&family=Fira+Sans:wght@400;500;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">')
+         '<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;700&family=Fira+Sans:wght@400;500;800&family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">')
 
 
 def page(path, lang, title, desc, body_class, body, alt_href, depth, og='d40-hero'):
@@ -57,7 +58,7 @@ def game_bar(lang, alt):
 </header></div>'''
 
 
-PRODUCT_NAME = {'depth40': 'Depth 40', 'widgetdesign': 'Widget Design', 'doce12': '12/12'}
+PRODUCT_NAME = {'depth40': 'Depth 40', 'widgetdesign': 'Widget Design', 'doce12': '12/12', 'kardek': 'My Kardek'}
 
 
 def game_footer(lang, slug='depth40'):
@@ -81,6 +82,8 @@ STORES = {
     'widgetdesign': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.widgetdesign', 'ios': None},
     # 12/12: cuando Google Play la publique → 'https://play.google.com/store/apps/details?id=cl.treso.doce12'
     'doce12': {'android': None, 'ios': None},
+    # My Kardek: cuando Google Play la publique → 'https://play.google.com/store/apps/details?id=cl.treso.fichero'
+    'kardek': {'android': None, 'ios': None},
 }
 PLAT = {'android': ('Google Play', 'Android'), 'ios': ('App Store', 'iPhone')}
 
@@ -134,6 +137,10 @@ CATALOG = [
     dict(slug='doce12', kind={'es': 'APP', 'en': 'APP'}, name='12<em>/</em>12', label='12/12: Diario de cultivo', pic='dd-card', cls=' dd',
          p={'es': 'Diario de cultivo para carpas indoor. Tu carpa a escala, una bitácora de riegos, clima, luz y fotos, el avance del ciclo hasta la cosecha y un medidor de luz con el sensor del teléfono.',
             'en': 'A grow diary for indoor tents. Your tent to scale, a logbook of waterings, climate, light and photos, cycle progress up to harvest and a light meter using your phone’s sensor.'},
+         ),
+    dict(slug='kardek', kind={'es': 'APP', 'en': 'APP'}, name='MY <em>KARDEK</em>', label='My Kardek', pic='mk-card', cls=' mk',
+         p={'es': 'Un fichero de notas en tu teléfono: cuatro cajones que abres y cierras, y fichas que sacas, escribes y vuelves a guardar. Desde una hoja de cuaderno hasta 45 plantillas listas para usar.',
+            'en': 'A note card file on your phone: four drawers you open and close, and cards you take out, write on and put back. From a blank notebook page to 45 ready-made templates.'},
          ),
 ]
 STUDIO = {
@@ -645,3 +652,172 @@ for lang in ('es', 'en'):
     doc_page('doce12', lang, 'doce12/terminos' if lang == 'es' else 'doce12/terms', 'Términos del servicio' if lang == 'es' else 'Terms of Service',
              ('Última actualización: ' if lang == 'es' else 'Last updated: ') + UPDATED_DD[lang], secs,
              '/doce12/terms/' if lang == 'es' else '/doce12/terminos/', 'game dd', 'dd-hero')
+
+
+# ================================================================ My Kardek: fichero de notas
+# Blanco, tinta negra, letra JetBrains Mono y el amarillo de las etiquetas, como la app.
+MK_SHOTS = [('inicio', 'El fichero', 'The card file'), ('cajon', 'Un cajón lleno', 'A full drawer'), ('plantillas', 'Elegir plantilla', 'Pick a template'),
+            ('nota', 'No olvidar', 'Note to self'), ('fotos', 'Seguimiento con fotos', 'Photo tracker'), ('cotizacion', 'Cotización', 'Quote'),
+            ('hoja', 'Hoja de cuaderno', 'Notebook page'), ('receta', 'Receta', 'Recipe'), ('semana', 'Mi semana', 'My week'),
+            ('decision', 'A decidir', 'Decision'), ('buscar', 'Buscar', 'Search'), ('clave', 'Cajón con clave', 'Locked drawer')]
+MK_FAMS = [('A', 'Hojas', 'Pages', 1), ('B', 'Notas rápidas', 'Quick notes', 4), ('C', 'Listas y tareas', 'Lists & tasks', 8), ('D', 'Planificadores', 'Planners', 6),
+           ('E', 'Seguimiento', 'Trackers', 7), ('F', 'Decisiones', 'Decisions', 3), ('G', 'Cómo me siento', 'How I feel', 5),
+           ('H', 'Recados', 'Notes for others', 7), ('I', 'Recetas', 'Recipes', 1), ('J', 'Cotizaciones', 'Quotes', 3)]
+MK = {
+    'es': dict(
+        tag='TU FICHERO DE NOTAS',
+        intro=['Un fichero de verdad en tu teléfono: cuatro cajones que abres y cierras, y fichas que sacas, escribes y vuelves a guardar.',
+               'Parte con una hoja de cuaderno en blanco o elige entre 45 plantillas: listas, planificadores, seguimientos con fotos, recetas, recados y cotizaciones al paso. Todo se edita, todo queda en tu teléfono y funciona sin internet.'],
+        pills=['PAGO ÚNICO', 'SIN ANUNCIOS', 'SIN SUSCRIPCIÓN', 'SIN CUENTA', 'FUNCIONA SIN INTERNET', '45 PLANTILLAS', 'ESPAÑOL · ENGLISH'],
+        shots_h='CAPTURAS', feat_h='QUÉ HACE', fam_h='LAS 45 PLANTILLAS',
+        feats=[('4 cajones', 'Ponle nombre y color de etiqueta a cada uno. Las fichas se ordenan solas por nombre.'),
+               ('45 plantillas', 'En 10 familias. Las ves completas, con su diseño, antes de elegir una.'),
+               ('Todo se edita', 'Cada título, casilla y opción de una plantilla se cambia en cada ficha.'),
+               ('Seguimiento con fotos', 'Una planta que crece, una obra, tus hijos: foto, fecha y nota, una tras otra.'),
+               ('Cotizaciones al paso', 'Tu logo, tu nombre, el cliente y los ítems. Sin cálculos automáticos: tú escribes valores e impuestos.'),
+               ('Cajón con clave', 'Protege cualquier cajón con una clave de 4 dígitos.'),
+               ('Buscar', 'Encuentra cualquier ficha por lo que escribiste en ella.'),
+               ('Enviar como imagen', 'Comparte una ficha por WhatsApp o correo, o guárdala en tu galería.')],
+        note='Las cotizaciones de My Kardek son un borrador rápido para mandar a un cliente: no son boleta ni factura y no calculan impuestos.',
+        alt='Capturas de My Kardek', desc='My Kardek: un fichero de notas con cuatro cajones y 45 plantillas, sin internet. Para Android y iPhone. Una app de Estudio Treso.'),
+    'en': dict(
+        tag='YOUR NOTE CARD FILE',
+        intro=['A real card file on your phone: four drawers you open and close, and cards you take out, write on and put back.',
+               'Start with a blank notebook page or pick one of 45 templates: lists, planners, photo trackers, recipes, notes for others and quick quotes. Everything is editable, everything stays on your phone and it works offline.'],
+        pills=['ONE-TIME PURCHASE', 'NO ADS', 'NO SUBSCRIPTION', 'NO ACCOUNT', 'WORKS OFFLINE', '45 TEMPLATES', 'ENGLISH · ESPAÑOL'],
+        shots_h='SCREENSHOTS', feat_h='WHAT IT DOES', fam_h='THE 45 TEMPLATES',
+        feats=[('4 drawers', 'Give each one a name and a label color. Cards sort themselves by name.'),
+               ('45 templates', 'In 10 families. You see each one in full, with its design, before you pick it.'),
+               ('Everything is editable', 'Every title, box and option in a template can be changed on each card.'),
+               ('Photo trackers', 'A growing plant, a building project, your kids: photo, date and note, one after another.'),
+               ('Quick quotes', 'Your logo, your name, the client and the items. No automatic math: you type your own amounts and taxes.'),
+               ('Locked drawer', 'Protect any drawer with a 4-digit code.'),
+               ('Search', 'Find any card by what you wrote on it.'),
+               ('Send as an image', 'Share a card by WhatsApp or email, or save it to your gallery.')],
+        note='My Kardek quotes are a quick draft to send to a client: they are not invoices or tax documents and they do not calculate taxes.',
+        alt='My Kardek screenshots', desc='My Kardek: a note card file with four drawers and 45 templates, works offline. For Android and iPhone. An app by Estudio Treso.'),
+}
+for lang, t in MK.items():
+    path = 'kardek' if lang == 'es' else 'kardek/en'
+    alt = '{up}kardek/en/' if lang == 'es' else '{up}kardek/'
+    shots = ''.join(f'<figure><img src="{{up}}assets/mk-{k}-{lang}.jpg" width="540" height="1080" loading="lazy" alt="{es if lang == "es" else en}"><figcaption>{(es if lang == "es" else en).upper()}</figcaption></figure>'
+                    for k, es, en in MK_SHOTS)
+    feats = ''.join(f'<div><b>{a}</b><span>{b}</span></div>' for a, b in t['feats'])
+    fams = ''.join(f'<li data-l="{l}">{(es if lang == "es" else en).upper()}<span>{n}</span></li>' for l, es, en, n in MK_FAMS)
+    pills = ''.join(f'<span class="pill">{p}</span>' for p in t['pills'])
+    body = game_bar(lang, alt) + f"""
+<main id="main" class="wrap">
+  <div class="hero" style="background-image:url('{{up}}assets/mk-hero-{lang}.jpg')" role="img" aria-label="My Kardek"></div>
+  <h1><span>MY KARDEK</span></h1>
+  <p class="tag">{t['tag']}</p>
+  {''.join(f'<p class="intro">{p}</p>' for p in t['intro'])}
+  {store_buttons('kardek', lang)}
+  <div class="pills">{pills}</div>
+  <h2>{t['shots_h']}</h2>
+  <div class="shots" role="group" aria-label="{t['alt']}" tabindex="0">{shots}</div>
+  <h2>{t['feat_h']}</h2>
+  <div class="feat">{feats}</div>
+  <h2>{t['fam_h']}</h2>
+  <ol class="missions fams">{fams}</ol>
+  <p class="note">{t['note']}</p>
+</main>
+""" + game_footer(lang, 'kardek')
+    page(path, lang, 'My Kardek · Estudio Treso', t['desc'], 'game mk', body, '/kardek/en/' if lang == 'es' else '/kardek/', 1 if lang == 'es' else 2, og='mk-hero')
+
+MK_PRIV = {
+    'es': ('kardek/privacidad', 'Política de privacidad', f'Última actualización: {UPDATED_MK["es"]}', [
+        ('', 'My Kardek es una app desarrollada por Estudio Treso, marca de TRESO SPA (Santiago, Chile).'),
+        ('Datos que recopilamos', 'Ninguno. La app no pide registro, no tiene cuentas, no muestra publicidad, no usa servicios de análisis y no nos envía información. Funciona sin internet y no tenemos servidores que reciban tus datos.'),
+        ('Datos guardados en tu dispositivo', 'Todo lo que escribes queda en el almacenamiento privado de la app en tu teléfono: tus fichas y su contenido, los nombres y colores de tus cajones, tus ajustes (idioma y sonidos) y las fotos que agregues. Nada de eso sale del teléfono, salvo que tú envíes o guardes una ficha como imagen. Se borra al desinstalar la app.'),
+        ('Fotos', 'Cuando agregas una foto a una ficha (por ejemplo, en un seguimiento o el logo de una cotización), la eliges tú con la cámara o el selector del sistema, y la app guarda una copia dentro de su propio espacio. La app no recorre ni lee el resto de tu galería. El permiso de cámara se pide solo cuando tú tocas para tomar una foto.'),
+        ('Clave de los cajones', 'Si proteges un cajón con una clave de 4 dígitos, la app no guarda la clave: guarda en tu teléfono solo una huella de ella para poder comprobarla. La clave impide abrir el cajón desde la app, pero no cifra su contenido. Si la olvidas no se puede recuperar; la única forma de quitarla es vaciar ese cajón.'),
+        ('Enviar o guardar una ficha', 'Cuando tocas ENVIAR, la app crea la imagen de la ficha dentro de tu teléfono. Si eliges enviarla, se abre el menú de compartir del sistema y tú decides a quién y por dónde; lo que envíes a otra app queda sujeto a la política de privacidad de esa app. Si eliges guardarla, en Android queda en tu galería, en la carpeta Imágenes › My Kardek; en iPhone se abre el menú del sistema, donde eliges «Guardar imagen».'),
+        ('Sonidos y vibración', 'Se usan solo como efectos al abrir y cerrar cajones y fichas. Los sonidos se apagan en Ajustes.'),
+        ('Compra de la app', 'La compra la procesa la tienda (Google Play o App Store) con tu cuenta de esa tienda, según su propia política de privacidad. Nosotros no recibimos tus datos de pago.'),
+        ('Niños', 'La app no está dirigida a menores de 13 años y no recopila datos de nadie.'),
+        ('Cambios', 'Si esta política cambia, publicaremos la nueva versión en esta misma página con su fecha.'),
+        ('Contacto', f'Para cualquier consulta sobre privacidad escríbenos a <a class="mail" href="mailto:{MAIL}">{MAIL}</a>'),
+    ], '/kardek/privacy/'),
+    'en': ('kardek/privacy', 'Privacy Policy', f'Last updated: {UPDATED_MK["en"]}', [
+        ('', 'My Kardek is an app developed by Estudio Treso, a brand of TRESO SPA (Santiago, Chile).'),
+        ('Data we collect', 'None. The app requires no sign-up, has no accounts, shows no ads, uses no analytics services and sends no information to us. It works offline and we have no servers that receive your data.'),
+        ('Data stored on your device', 'Everything you write stays in the app’s private storage on your phone: your cards and their content, your drawers’ names and colors, your settings (language and sounds) and the photos you add. None of it leaves the phone unless you send or save a card as an image. It is deleted when you uninstall the app.'),
+        ('Photos', 'When you add a photo to a card (for example in a tracker or a quote’s logo), you pick it yourself with the camera or the system picker, and the app keeps a copy in its own storage. The app does not browse or read the rest of your gallery. Camera permission is requested only when you tap to take a photo.'),
+        ('Drawer codes', 'If you lock a drawer with a 4-digit code, the app does not store the code: it stores on your phone only a fingerprint of it in order to check it. The code prevents the drawer from being opened in the app, but it does not encrypt its contents. If you forget it, it cannot be recovered; the only way to remove it is to empty that drawer.'),
+        ('Sending or saving a card', 'When you tap SEND, the app creates the card’s image on your phone. If you choose to send it, the system share menu opens and you decide who gets it and how; whatever you send to another app is subject to that app’s privacy policy. If you choose to save it, on Android it goes to your gallery, in the Pictures › My Kardek folder; on iPhone the system menu opens, where you choose “Save Image”.'),
+        ('Sounds and vibration', 'They are used only as effects when opening and closing drawers and cards. Sounds can be turned off in Settings.'),
+        ('App purchase', 'The purchase is processed by the store (Google Play or the App Store) with your store account, under the store’s own privacy policy. We never receive your payment details.'),
+        ('Children', 'The app is not directed at children under 13 and collects no data from anyone.'),
+        ('Changes', 'If this policy changes, we will publish the new version on this same page with its date.'),
+        ('Contact', f'For any privacy question, write to us at <a class="mail" href="mailto:{MAIL}">{MAIL}</a>'),
+    ], '/kardek/privacidad/'),
+}
+for lang, (path, h1, meta, secs, alt_abs) in MK_PRIV.items():
+    doc_page('kardek', lang, path, h1, meta, secs, alt_abs, 'game mk', 'mk-hero')
+
+MK_SUP = {
+    'es': ('kardek/soporte', 'Soporte', 'Escríbenos y te respondemos lo antes posible. Si es un error, cuéntanos el modelo de tu teléfono, la plantilla y qué estabas haciendo.', [
+        ('¿Cómo creo una ficha?', 'Abre un cajón y toca «+ FICHA». Desliza de lado para ver las plantillas completas, o toca una familia arriba para saltar a ella. Toca la plantilla del centro o «CREAR».'),
+        ('¿Cómo le cambio el nombre a una ficha?', 'Con la ficha abierta, toca su nombre arriba (junto al lápiz) o la pestaña de la propia ficha. Ese es el nombre que asoma en el cajón.'),
+        ('¿Cómo cambio el nombre o el color de un cajón?', 'En la pantalla del fichero toca «EDITAR CAJONES». Elige el cajón (01 a 04), escribe el nombre y toca un color de etiqueta.'),
+        ('¿Cómo pongo o quito la clave de un cajón?', 'En «EDITAR CAJONES», elige el cajón y toca «PROTEGER CON CLAVE»: escribes 4 dígitos y los repites. Para quitarla, toca «QUITAR CLAVE» y escribe la clave actual. Para cambiarla, «CAMBIAR CLAVE».'),
+        ('Olvidé la clave.', 'La clave no se puede recuperar, ni siquiera nosotros. En la pantalla de la clave toca «OLVIDÉ LA CLAVE»: la única forma de quitarla es vaciar ese cajón, y sus fichas se borran para siempre.'),
+        ('¿Cómo envío o guardo una ficha?', 'Con la ficha abierta, toca «ENVIAR». Elige «ENVIAR IMAGEN» para mandarla por WhatsApp, correo u otra app, o «GUARDAR EN EL TELÉFONO». En Android queda en la galería, en Imágenes › My Kardek; en iPhone elige «Guardar imagen» en el menú que aparece.'),
+        ('¿Las cotizaciones calculan el total y el IVA?', 'No, a propósito: cada país y cada negocio calcula distinto. Escribes tú los valores, el neto, el impuesto y el total. Son un borrador rápido para mandar a un cliente, no una boleta ni una factura.'),
+        ('¿Cómo muevo, duplico o borro una ficha?', 'Con la ficha abierta, toca «⋯». Ahí puedes moverla a otro cajón, duplicarla o eliminarla. Si la eliminas, tienes unos segundos para tocar «DESHACER».'),
+        ('El teclado tapa lo que escribo.', 'La ficha sube sola hasta lo que escribes, y también puedes moverla con el dedo. Al cerrar el teclado vuelve a su lugar.'),
+        ('¿Cómo apago los sonidos o cambio el idioma?', 'En Ajustes (el engranaje en la pantalla del fichero): SONIDOS SÍ / NO e IDIOMA ESPAÑOL / ENGLISH. Las plantillas cambian de idioma; lo que tú escribiste, no.'),
+        ('¿Dónde se guardan mis fichas?', 'Solo en tu teléfono. Si desinstalas la app o borras sus datos, se pierden y no tenemos copia. Para guardar una ficha importante fuera de la app, guárdala como imagen.'),
+        ('¿Necesito internet?', 'No. My Kardek funciona entera sin conexión.'),
+    ], '/kardek/support/', 'PREGUNTAS FRECUENTES'),
+    'en': ('kardek/support', 'Support', "Write to us and we'll get back to you as soon as possible. If it's a bug, tell us your phone model, the template and what you were doing.", [
+        ('How do I create a card?', 'Open a drawer and tap “+ CARD”. Swipe sideways to see the templates in full, or tap a family at the top to jump to it. Tap the template in the middle or “CREATE”.'),
+        ('How do I rename a card?', 'With the card open, tap its name at the top (next to the pencil) or the card’s own tab. That is the name that shows in the drawer.'),
+        ('How do I change a drawer’s name or color?', 'On the card file screen tap “EDIT DRAWERS”. Choose the drawer (01 to 04), type the name and tap a label color.'),
+        ('How do I lock or unlock a drawer?', 'In “EDIT DRAWERS”, choose the drawer and tap “LOCK WITH A CODE”: enter 4 digits and repeat them. To remove it, tap “REMOVE LOCK” and enter the current code. To change it, “CHANGE CODE”.'),
+        ('I forgot the code.', 'The code cannot be recovered, not even by us. On the code screen tap “I FORGOT THE CODE”: the only way to remove it is to empty that drawer, and its cards are deleted for good.'),
+        ('How do I send or save a card?', 'With the card open, tap “SEND”. Choose “SEND IMAGE” to send it by WhatsApp, email or another app, or “SAVE TO PHONE”. On Android it goes to your gallery, in Pictures › My Kardek; on iPhone choose “Save Image” in the menu that appears.'),
+        ('Do quotes calculate the total and tax?', 'No, on purpose: every country and business calculates differently. You type the amounts, subtotal, tax and total yourself. They are a quick draft to send to a client, not an invoice.'),
+        ('How do I move, duplicate or delete a card?', 'With the card open, tap “⋯”. There you can move it to another drawer, duplicate it or delete it. If you delete it, you have a few seconds to tap “UNDO”.'),
+        ('The keyboard covers what I type.', 'The card scrolls up to what you are typing on its own, and you can also move it with your finger. When the keyboard closes it goes back into place.'),
+        ('How do I turn off sounds or change the language?', 'In Settings (the gear on the card file screen): SOUNDS YES / NO and LANGUAGE ESPAÑOL / ENGLISH. Templates switch language; what you wrote does not.'),
+        ('Where are my cards stored?', 'Only on your phone. If you uninstall the app or clear its data, they are lost and we keep no copy. To keep an important card outside the app, save it as an image.'),
+        ('Do I need an internet connection?', 'No. My Kardek works fully offline.'),
+    ], '/kardek/soporte/', 'FREQUENTLY ASKED QUESTIONS'),
+}
+for lang, (path, h1, lead, faq, alt_abs, faq_h) in MK_SUP.items():
+    dl = ''.join(f'<dt>{q}</dt><dd>{a}</dd>' for q, a in faq)
+    body = game_bar(lang, '{up}' + alt_abs.lstrip('/')) + f"""
+<main id="main" class="wrap doc">
+  <h1>{h1.upper()} · MY KARDEK</h1>
+  <p>{lead}</p>
+  <p><a class="mail" href="mailto:{MAIL}?subject=My%20Kardek">{MAIL}</a></p>
+  <h2>{faq_h}</h2>
+  <dl>{dl}</dl>
+</main>
+""" + game_footer(lang, 'kardek')
+    page(path, lang, f'{h1} · My Kardek', f'{h1} · My Kardek · Estudio Treso', 'game mk', body, alt_abs, 2, og='mk-hero')
+
+# Términos: app pagada (sin compras dentro de la app), como 12/12.
+MK_TERMS_BUY = {
+    'es': [('Compra de la app', 'My Kardek se compra con un pago único en la tienda (Google Play o App Store). No tiene compras dentro de la app, anuncios ni suscripción. El precio se muestra en la tienda, en tu moneda, antes de pagar. La compra queda asociada a tu cuenta de la tienda: puedes volver a instalar la app sin pagar de nuevo usando la misma cuenta.'),
+           ('Pagos y reembolsos', 'Los pagos los procesa Google Play o la App Store. Los reembolsos se rigen por las políticas de esa tienda; si tienes un problema con tu compra, escríbenos y te ayudamos.')],
+    'en': [('App purchase', 'My Kardek is bought with a one-time payment in the store (Google Play or the App Store). It has no in-app purchases, ads or subscription. The price is shown in the store, in your currency, before you pay. The purchase is tied to your store account: you can reinstall the app without paying again using the same account.'),
+           ('Payments and refunds', 'Payments are processed by Google Play or the App Store. Refunds are governed by that store’s policies; if you have a problem with your purchase, write to us and we will help.')],
+}
+MK_TERMS_EXTRA = {
+    'es': [('Tus fichas', 'Tus fichas y fotos se guardan solo en tu teléfono. No tenemos copia de ellas y no podemos recuperarlas si se pierden, por ejemplo al desinstalar la app o cambiar de teléfono.'),
+           ('Clave de los cajones', 'La clave de 4 dígitos impide abrir un cajón desde la app, pero no cifra su contenido. Si la olvidas no se puede recuperar: la única forma de quitarla es vaciar ese cajón, con lo que sus fichas se borran.'),
+           ('Cotizaciones', 'Las plantillas de cotización son para llenar a mano: no calculan totales ni impuestos y no son documentos tributarios (boleta, factura ni equivalentes). Eres responsable de los valores, impuestos y condiciones que escribes y de lo que envías a tus clientes.'),
+           ('Tu contenido', 'Lo que escribes y las fotos que agregas son tuyos. Eres responsable de tener derecho a usar las fotos y logos que pongas en tus fichas.')],
+    'en': [('Your cards', 'Your cards and photos are stored only on your phone. We keep no copy of them and cannot recover them if they are lost, for example when uninstalling the app or changing phones.'),
+           ('Drawer codes', 'The 4-digit code prevents a drawer from being opened in the app, but it does not encrypt its contents. If you forget it, it cannot be recovered: the only way to remove it is to empty that drawer, which deletes its cards.'),
+           ('Quotes', 'Quote templates are filled in by hand: they do not calculate totals or taxes and they are not tax documents (invoices, receipts or equivalents). You are responsible for the amounts, taxes and conditions you write and for what you send to your clients.'),
+           ('Your content', 'What you write and the photos you add are yours. You are responsible for having the right to use the photos and logos you put on your cards.')],
+}
+for lang in ('es', 'en'):
+    secs = terms(lang, 'My Kardek', 'una app de notas' if lang == 'es' else 'a note-taking app', '', MK_TERMS_EXTRA[lang])
+    secs[2:4] = MK_TERMS_BUY[lang]
+    doc_page('kardek', lang, 'kardek/terminos' if lang == 'es' else 'kardek/terms', 'Términos del servicio' if lang == 'es' else 'Terms of Service',
+             ('Última actualización: ' if lang == 'es' else 'Last updated: ') + UPDATED_MK[lang], secs,
+             '/kardek/terms/' if lang == 'es' else '/kardek/terminos/', 'game mk', 'mk-hero')

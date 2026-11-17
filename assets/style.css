@@ -157,3 +157,51 @@ body.dd { --sea: #FFFFFF; --sea2: #F2F2F0; --fog: #2A2A28; --fog2: #5C5C5A; --cy
 .game-card.dd .go { border-color: #111111; color: #111111; font-family: 'Inter', sans-serif; font-weight: 500; border-radius: 12px; }
 .game-card.dd:hover .go { background: #F2F2F0; }
 .game-card.dd .pic { background-position: center; }
+
+/* ---------- My Kardek: fichero de notas (blanco, líneas negras, JetBrains Mono y el amarillo de las etiquetas, como la app) ---------- */
+body.mk { --sea: #FFFFFF; --sea2: #F4F4F2; --fog: #222222; --fog2: #5A5A5A; --cyan: #111111; --cyan2: #111111; --rule: #111111; --label: #F3EE6E;
+  background: var(--sea); color: var(--fog); font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 15px; }
+.mk.game h1 { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 3px; font-size: clamp(30px, 7vw, 46px); margin-top: 30px; }
+.mk.game h1 span { display: inline-block; background: #111111; color: #FFFFFF; padding: 8px 16px 6px; }
+.mk.game main:not(.doc) h1 + .tag { margin-top: 14px; }
+.mk .tag { color: #111111; }
+.mk.game h2 { font-family: 'JetBrains Mono', monospace; font-weight: 500; color: #111111; letter-spacing: 3px; display: inline-block; background: var(--label); border: 1.2px solid #111111; padding: 4px 10px 3px; font-size: 12px; }
+.mk .hero { border-radius: 2px; border: 1.2px solid #111111; background-color: #FFFFFF; }
+.mk .pill { border: 1.2px solid #111111; border-radius: 0; color: #111111; }
+.mk .feat { gap: 0; border-top: 1.2px solid #111111; border-left: 1.2px solid #111111; }
+.mk .feat div { border: 0; border-right: 1.2px solid #111111; border-bottom: 1.2px solid #111111; border-radius: 0; background: #FFFFFF; }
+.mk .feat b { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 1px; color: #111111; text-transform: uppercase; font-size: 14px; }
+.mk .feat span { color: #444444; }
+.mk .shots img { border-radius: 2px; border: 1.2px solid #111111; }
+.mk .shots figcaption { color: #444444; }
+.mk .missions { gap: 0; border-top: 1.2px solid #111111; border-left: 1.2px solid #111111; }
+.mk .missions li { border: 0; border-right: 1.2px solid #111111; border-bottom: 1.2px solid #111111; border-radius: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 1px; color: #111111; display: flex; justify-content: space-between; gap: 10px; }
+.mk .missions li::before { content: attr(data-l); color: #111111; background: var(--label); border: 1px solid #111111; padding: 0 6px; margin-right: 10px; font-size: 11px; height: 18px; line-height: 17px; }
+.mk .missions li span { margin-left: auto; color: #5A5A5A; }
+.mk .note { color: #444444; }
+.mk .store { background: #111111; border: 1.2px solid #111111; border-radius: 0; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; }
+.mk .store b { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+.mk .store small, .mk .store span { color: #BBBBBB; }
+.mk .store:hover { background: #333333; }
+.mk .store.off { background: transparent; border: 1.2px dashed #111111; color: #111111; }
+.mk .store.off small, .mk .store.off span { color: #5A5A5A; }
+.mk .mini { color: #5A5A5A; }
+.mk .mini img { filter: none; }
+.mk .lang { border-color: #111111; border-radius: 0; color: #111111; }
+.mk .lang:hover { background: var(--label); border-color: #111111; color: #111111; }
+.mk .doc h1 { letter-spacing: 2px; color: #111111; }
+.mk .doc .mail { color: #111111; border: 1.2px solid #111111; border-radius: 0; background: var(--label); }
+.mk .doc dt { color: #111111; }
+.mk .doc dd { color: #333333; }
+.mk .doc .meta { color: #5A5A5A; }
+.mk footer { border-top: 1.2px solid #111111; }
+.mk footer a { color: #111111; }
+.game-card.mk { background: #FFFFFF; color: #222222; border: 1.2px solid #111111; border-radius: 4px; }
+.game-card.mk .k { color: #5A5A5A; font-family: 'JetBrains Mono', monospace; }
+.game-card.mk h2 { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 3px; font-size: 28px; color: #FFFFFF; background: #111111; align-self: flex-start; padding: 6px 12px 4px; }
+.game-card.mk h2 em { font-style: normal; color: #FFFFFF; }
+.game-card.mk p { color: #222222; font-family: 'JetBrains Mono', monospace; font-size: 14px; }
+.game-card.mk .go { border: 1.2px solid #111111; border-radius: 0; color: #111111; font-family: 'JetBrains Mono', monospace; background: var(--label, #F3EE6E); }
+.game-card.mk:hover .go { background: #111111; color: #FFFFFF; }
+.game-card.mk .pic { background-position: center; border-right: 1.2px solid #111111; }
+@media (max-width: 680px) { .game-card.mk .pic { border-right: 0; border-bottom: 1.2px solid #111111; } }
