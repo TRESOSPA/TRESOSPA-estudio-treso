@@ -7,7 +7,7 @@ SITE = 'https://estudio.treso.cl'
 UPDATED = {'es': '3 de noviembre de 2026', 'en': 'November 3, 2026'}
 UPDATED_WD = {'es': '5 de noviembre de 2026', 'en': 'November 5, 2026'}
 UPDATED_DD = {'es': '16 de noviembre de 2026', 'en': 'November 16, 2026'}
-UPDATED_MK = {'es': '16 de noviembre de 2026', 'en': 'November 16, 2026'}
+UPDATED_MK = {'es': '17 de noviembre de 2026', 'en': 'November 17, 2026'}
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;700&family=Fira+Sans:wght@400;500;800&family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">')
@@ -139,8 +139,8 @@ CATALOG = [
             'en': 'A grow diary for indoor tents. Your tent to scale, a logbook of waterings, climate, light and photos, cycle progress up to harvest and a light meter using your phone’s sensor.'},
          ),
     dict(slug='kardek', kind={'es': 'APP', 'en': 'APP'}, name='MY <em>KARDEK</em>', label='My Kardek', pic='mk-card', cls=' mk',
-         p={'es': 'Un fichero de notas en tu teléfono: cuatro cajones que abres y cierras, y fichas que sacas, escribes y vuelves a guardar. Desde una hoja de cuaderno hasta 45 plantillas listas para usar.',
-            'en': 'A note card file on your phone: four drawers you open and close, and cards you take out, write on and put back. From a blank notebook page to 45 ready-made templates.'},
+         p={'es': 'Un fichero de notas en tu teléfono: cuatro cajones que abres y cierras, y fichas que sacas, escribes y vuelves a guardar. Desde una hoja de cuaderno hasta 48 plantillas listas para usar.',
+            'en': 'A note card file on your phone: four drawers you open and close, and cards you take out, write on and put back. From a blank notebook page to 48 ready-made templates.'},
          ),
 ]
 STUDIO = {
@@ -657,45 +657,45 @@ for lang in ('es', 'en'):
 # ================================================================ My Kardek: fichero de notas
 # Blanco, tinta negra, letra JetBrains Mono y el amarillo de las etiquetas, como la app.
 MK_SHOTS = [('inicio', 'El fichero', 'The card file'), ('cajon', 'Un cajón lleno', 'A full drawer'), ('plantillas', 'Elegir plantilla', 'Pick a template'),
-            ('nota', 'No olvidar', 'Note to self'), ('fotos', 'Seguimiento con fotos', 'Photo tracker'), ('cotizacion', 'Cotización', 'Quote'),
+            ('nota', 'No olvidar', 'Note to self'), ('fotos', 'Seguimiento con fotos', 'Photo tracker'), ('cotizacion', 'Cotización', 'Quote'), ('presupuesto', 'Presupuesto de fiesta', 'Party budget'),
             ('hoja', 'Hoja de cuaderno', 'Notebook page'), ('receta', 'Receta', 'Recipe'), ('semana', 'Mi semana', 'My week'),
             ('decision', 'A decidir', 'Decision'), ('buscar', 'Buscar', 'Search'), ('clave', 'Cajón con clave', 'Locked drawer')]
 MK_FAMS = [('A', 'Hojas', 'Pages', 1), ('B', 'Notas rápidas', 'Quick notes', 4), ('C', 'Listas y tareas', 'Lists & tasks', 8), ('D', 'Planificadores', 'Planners', 6),
            ('E', 'Seguimiento', 'Trackers', 7), ('F', 'Decisiones', 'Decisions', 3), ('G', 'Cómo me siento', 'How I feel', 5),
-           ('H', 'Recados', 'Notes for others', 7), ('I', 'Recetas', 'Recipes', 1), ('J', 'Cotizaciones', 'Quotes', 3)]
+           ('H', 'Recados', 'Notes for others', 7), ('I', 'Recetas', 'Recipes', 1), ('J', 'Cotizaciones', 'Quotes', 3), ('K', 'Presupuestos', 'Budgets', 3)]
 MK = {
     'es': dict(
         tag='TU FICHERO DE NOTAS',
         intro=['Un fichero de verdad en tu teléfono: cuatro cajones que abres y cierras, y fichas que sacas, escribes y vuelves a guardar.',
-               'Parte con una hoja de cuaderno en blanco o elige entre 45 plantillas: listas, planificadores, seguimientos con fotos, recetas, recados y cotizaciones al paso. Todo se edita, todo queda en tu teléfono y funciona sin internet.'],
-        pills=['PAGO ÚNICO', 'SIN ANUNCIOS', 'SIN SUSCRIPCIÓN', 'SIN CUENTA', 'FUNCIONA SIN INTERNET', '45 PLANTILLAS', 'ESPAÑOL · ENGLISH'],
-        shots_h='CAPTURAS', feat_h='QUÉ HACE', fam_h='LAS 45 PLANTILLAS',
+               'Parte con una hoja de cuaderno en blanco o elige entre 48 plantillas: listas, planificadores, seguimientos con fotos, recetas, recados, cotizaciones y presupuestos. Todo se edita, todo queda en tu teléfono y funciona sin internet.'],
+        pills=['PAGO ÚNICO', 'SIN ANUNCIOS', 'SIN SUSCRIPCIÓN', 'SIN CUENTA', 'FUNCIONA SIN INTERNET', '48 PLANTILLAS', 'ESPAÑOL · ENGLISH'],
+        shots_h='CAPTURAS', feat_h='QUÉ HACE', fam_h='LAS 48 PLANTILLAS',
         feats=[('4 cajones', 'Ponle nombre y color de etiqueta a cada uno. Las fichas se ordenan solas por nombre.'),
-               ('45 plantillas', 'En 10 familias. Las ves completas, con su diseño, antes de elegir una.'),
-               ('Todo se edita', 'Cada título, casilla y opción de una plantilla se cambia en cada ficha.'),
+               ('48 plantillas', 'En 11 familias. Las ves completas antes de elegir, y cada título, casilla y opción se edita.'),
                ('Seguimiento con fotos', 'Una planta que crece, una obra, tus hijos: foto, fecha y nota, una tras otra.'),
-               ('Cotizaciones al paso', 'Tu logo, tu nombre, el cliente y los ítems. Sin cálculos automáticos: tú escribes valores e impuestos.'),
+               ('Cotizaciones al paso', 'Tu logo, de quién es, el cliente y los ítems. Sin cálculos automáticos: tú escribes valores e impuestos.'),
+               ('Presupuestos', 'Una fiesta, un viaje o el mes: anota lo que gastas, marca lo pagado y lleva el total.'),
                ('Cajón con clave', 'Protege cualquier cajón con una clave de 4 dígitos.'),
                ('Buscar', 'Encuentra cualquier ficha por lo que escribiste en ella.'),
-               ('Enviar como imagen', 'Comparte una ficha por WhatsApp o correo, o guárdala en tu galería.')],
-        note='Las cotizaciones de My Kardek son un borrador rápido para mandar a un cliente: no son boleta ni factura y no calculan impuestos.',
-        alt='Capturas de My Kardek', desc='My Kardek: un fichero de notas con cuatro cajones y 45 plantillas, sin internet. Para Android y iPhone. Una app de Estudio Treso.'),
+               ('JPG o PDF', 'Envía una ficha por WhatsApp o correo, o guárdala en tu teléfono, de borde a borde.')],
+        note='Las cotizaciones de My Kardek son un borrador rápido para mandar a un cliente: no son boleta ni factura. Ni las cotizaciones ni los presupuestos hacen cálculos: tú escribes los montos.',
+        alt='Capturas de My Kardek', desc='My Kardek: un fichero de notas con cuatro cajones y 48 plantillas, sin internet. Para Android y iPhone. Una app de Estudio Treso.'),
     'en': dict(
         tag='YOUR NOTE CARD FILE',
         intro=['A real card file on your phone: four drawers you open and close, and cards you take out, write on and put back.',
-               'Start with a blank notebook page or pick one of 45 templates: lists, planners, photo trackers, recipes, notes for others and quick quotes. Everything is editable, everything stays on your phone and it works offline.'],
-        pills=['ONE-TIME PURCHASE', 'NO ADS', 'NO SUBSCRIPTION', 'NO ACCOUNT', 'WORKS OFFLINE', '45 TEMPLATES', 'ENGLISH · ESPAÑOL'],
-        shots_h='SCREENSHOTS', feat_h='WHAT IT DOES', fam_h='THE 45 TEMPLATES',
+               'Start with a blank notebook page or pick one of 48 templates: lists, planners, photo trackers, recipes, notes for others, quotes and budgets. Everything is editable, everything stays on your phone and it works offline.'],
+        pills=['ONE-TIME PURCHASE', 'NO ADS', 'NO SUBSCRIPTION', 'NO ACCOUNT', 'WORKS OFFLINE', '48 TEMPLATES', 'ENGLISH · ESPAÑOL'],
+        shots_h='SCREENSHOTS', feat_h='WHAT IT DOES', fam_h='THE 48 TEMPLATES',
         feats=[('4 drawers', 'Give each one a name and a label color. Cards sort themselves by name.'),
-               ('45 templates', 'In 10 families. You see each one in full, with its design, before you pick it.'),
-               ('Everything is editable', 'Every title, box and option in a template can be changed on each card.'),
+               ('48 templates', 'In 11 families. You see them in full before you pick, and every title, box and option is editable.'),
                ('Photo trackers', 'A growing plant, a building project, your kids: photo, date and note, one after another.'),
-               ('Quick quotes', 'Your logo, your name, the client and the items. No automatic math: you type your own amounts and taxes.'),
+               ('Quick quotes', 'Your logo, who it’s from, the client and the items. No automatic math: you type your own amounts and taxes.'),
+               ('Budgets', 'A party, a trip or the month: jot down what you spend, tick what’s paid and keep the total.'),
                ('Locked drawer', 'Protect any drawer with a 4-digit code.'),
                ('Search', 'Find any card by what you wrote on it.'),
-               ('Send as an image', 'Share a card by WhatsApp or email, or save it to your gallery.')],
-        note='My Kardek quotes are a quick draft to send to a client: they are not invoices or tax documents and they do not calculate taxes.',
-        alt='My Kardek screenshots', desc='My Kardek: a note card file with four drawers and 45 templates, works offline. For Android and iPhone. An app by Estudio Treso.'),
+               ('JPG or PDF', 'Send a card by WhatsApp or email, or save it to your phone, edge to edge.')],
+        note='My Kardek quotes are a quick draft to send to a client: they are not invoices or tax documents. Neither quotes nor budgets do any math: you type the amounts.',
+        alt='My Kardek screenshots', desc='My Kardek: a note card file with four drawers and 48 templates, works offline. For Android and iPhone. An app by Estudio Treso.'),
 }
 for lang, t in MK.items():
     path = 'kardek' if lang == 'es' else 'kardek/en'
@@ -731,7 +731,7 @@ MK_PRIV = {
         ('Datos guardados en tu dispositivo', 'Todo lo que escribes queda en el almacenamiento privado de la app en tu teléfono: tus fichas y su contenido, los nombres y colores de tus cajones, tus ajustes (idioma y sonidos) y las fotos que agregues. Nada de eso sale del teléfono, salvo que tú envíes o guardes una ficha como imagen. Se borra al desinstalar la app.'),
         ('Fotos', 'Cuando agregas una foto a una ficha (por ejemplo, en un seguimiento o el logo de una cotización), la eliges tú con la cámara o el selector del sistema, y la app guarda una copia dentro de su propio espacio. La app no recorre ni lee el resto de tu galería. El permiso de cámara se pide solo cuando tú tocas para tomar una foto.'),
         ('Clave de los cajones', 'Si proteges un cajón con una clave de 4 dígitos, la app no guarda la clave: guarda en tu teléfono solo una huella de ella para poder comprobarla. La clave impide abrir el cajón desde la app, pero no cifra su contenido. Si la olvidas no se puede recuperar; la única forma de quitarla es vaciar ese cajón.'),
-        ('Enviar o guardar una ficha', 'Cuando tocas ENVIAR, la app crea la imagen de la ficha dentro de tu teléfono. Si eliges enviarla, se abre el menú de compartir del sistema y tú decides a quién y por dónde; lo que envíes a otra app queda sujeto a la política de privacidad de esa app. Si eliges guardarla, en Android queda en tu galería, en la carpeta Imágenes › My Kardek; en iPhone se abre el menú del sistema, donde eliges «Guardar imagen».'),
+        ('Enviar o guardar una ficha', 'Cuando tocas ENVIAR, la app crea la imagen (JPG) o el PDF de la ficha dentro de tu teléfono. Si eliges enviarla, se abre el menú de compartir del sistema y tú decides a quién y por dónde; lo que envíes a otra app queda sujeto a la política de privacidad de esa app. Si eliges guardarla, en Android la imagen queda en tu galería (Imágenes › My Kardek) y el PDF en Descargas › My Kardek; en iPhone se abre el menú del sistema, donde eliges «Guardar imagen» o «Guardar en Archivos».'),
         ('Sonidos y vibración', 'Se usan solo como efectos al abrir y cerrar cajones y fichas. Los sonidos se apagan en Ajustes.'),
         ('Compra de la app', 'La compra la procesa la tienda (Google Play o App Store) con tu cuenta de esa tienda, según su propia política de privacidad. Nosotros no recibimos tus datos de pago.'),
         ('Niños', 'La app no está dirigida a menores de 13 años y no recopila datos de nadie.'),
@@ -744,7 +744,7 @@ MK_PRIV = {
         ('Data stored on your device', 'Everything you write stays in the app’s private storage on your phone: your cards and their content, your drawers’ names and colors, your settings (language and sounds) and the photos you add. None of it leaves the phone unless you send or save a card as an image. It is deleted when you uninstall the app.'),
         ('Photos', 'When you add a photo to a card (for example in a tracker or a quote’s logo), you pick it yourself with the camera or the system picker, and the app keeps a copy in its own storage. The app does not browse or read the rest of your gallery. Camera permission is requested only when you tap to take a photo.'),
         ('Drawer codes', 'If you lock a drawer with a 4-digit code, the app does not store the code: it stores on your phone only a fingerprint of it in order to check it. The code prevents the drawer from being opened in the app, but it does not encrypt its contents. If you forget it, it cannot be recovered; the only way to remove it is to empty that drawer.'),
-        ('Sending or saving a card', 'When you tap SEND, the app creates the card’s image on your phone. If you choose to send it, the system share menu opens and you decide who gets it and how; whatever you send to another app is subject to that app’s privacy policy. If you choose to save it, on Android it goes to your gallery, in the Pictures › My Kardek folder; on iPhone the system menu opens, where you choose “Save Image”.'),
+        ('Sending or saving a card', 'When you tap SEND, the app creates the card’s image (JPG) or PDF on your phone. If you choose to send it, the system share menu opens and you decide who gets it and how; whatever you send to another app is subject to that app’s privacy policy. If you choose to save it, on Android the image goes to your gallery (Pictures › My Kardek) and the PDF to Downloads › My Kardek; on iPhone the system menu opens, where you choose “Save Image” or “Save to Files”.'),
         ('Sounds and vibration', 'They are used only as effects when opening and closing drawers and cards. Sounds can be turned off in Settings.'),
         ('App purchase', 'The purchase is processed by the store (Google Play or the App Store) with your store account, under the store’s own privacy policy. We never receive your payment details.'),
         ('Children', 'The app is not directed at children under 13 and collects no data from anyone.'),
@@ -762,8 +762,9 @@ MK_SUP = {
         ('¿Cómo cambio el nombre o el color de un cajón?', 'En la pantalla del fichero toca «EDITAR CAJONES». Elige el cajón (01 a 04), escribe el nombre y toca un color de etiqueta.'),
         ('¿Cómo pongo o quito la clave de un cajón?', 'En «EDITAR CAJONES», elige el cajón y toca «PROTEGER CON CLAVE»: escribes 4 dígitos y los repites. Para quitarla, toca «QUITAR CLAVE» y escribe la clave actual. Para cambiarla, «CAMBIAR CLAVE».'),
         ('Olvidé la clave.', 'La clave no se puede recuperar, ni siquiera nosotros. En la pantalla de la clave toca «OLVIDÉ LA CLAVE»: la única forma de quitarla es vaciar ese cajón, y sus fichas se borran para siempre.'),
-        ('¿Cómo envío o guardo una ficha?', 'Con la ficha abierta, toca «ENVIAR». Elige «ENVIAR IMAGEN» para mandarla por WhatsApp, correo u otra app, o «GUARDAR EN EL TELÉFONO». En Android queda en la galería, en Imágenes › My Kardek; en iPhone elige «Guardar imagen» en el menú que aparece.'),
+        ('¿Cómo envío o guardo una ficha?', 'Con la ficha abierta, toca «ENVIAR». Arriba elige el formato, «JPG · IMAGEN» o «PDF», y después «ENVIAR» para mandarla por WhatsApp, correo u otra app, o «GUARDAR EN EL TELÉFONO». En Android la imagen queda en la galería (Imágenes › My Kardek) y el PDF en Descargas › My Kardek; en iPhone elige «Guardar imagen» o «Guardar en Archivos» en el menú que aparece. La ficha sale de borde a borde, sin los botones de la app.'),
         ('¿Las cotizaciones calculan el total y el IVA?', 'No, a propósito: cada país y cada negocio calcula distinto. Escribes tú los valores, el neto, el impuesto y el total. Son un borrador rápido para mandar a un cliente, no una boleta ni una factura.'),
+        ('¿Para qué son los presupuestos?', 'Para llevar las cuentas de una fiesta, un viaje o el mes: anotas cada gasto, marcas lo que ya pagaste y escribes el total gastado y lo que queda. Tampoco calculan solos; los montos los escribes tú.'),
         ('¿Cómo muevo, duplico o borro una ficha?', 'Con la ficha abierta, toca «⋯». Ahí puedes moverla a otro cajón, duplicarla o eliminarla. Si la eliminas, tienes unos segundos para tocar «DESHACER».'),
         ('El teclado tapa lo que escribo.', 'La ficha sube sola hasta lo que escribes, y también puedes moverla con el dedo. Al cerrar el teclado vuelve a su lugar.'),
         ('¿Cómo apago los sonidos o cambio el idioma?', 'En Ajustes (el engranaje en la pantalla del fichero): SONIDOS SÍ / NO e IDIOMA ESPAÑOL / ENGLISH. Las plantillas cambian de idioma; lo que tú escribiste, no.'),
@@ -776,8 +777,9 @@ MK_SUP = {
         ('How do I change a drawer’s name or color?', 'On the card file screen tap “EDIT DRAWERS”. Choose the drawer (01 to 04), type the name and tap a label color.'),
         ('How do I lock or unlock a drawer?', 'In “EDIT DRAWERS”, choose the drawer and tap “LOCK WITH A CODE”: enter 4 digits and repeat them. To remove it, tap “REMOVE LOCK” and enter the current code. To change it, “CHANGE CODE”.'),
         ('I forgot the code.', 'The code cannot be recovered, not even by us. On the code screen tap “I FORGOT THE CODE”: the only way to remove it is to empty that drawer, and its cards are deleted for good.'),
-        ('How do I send or save a card?', 'With the card open, tap “SEND”. Choose “SEND IMAGE” to send it by WhatsApp, email or another app, or “SAVE TO PHONE”. On Android it goes to your gallery, in Pictures › My Kardek; on iPhone choose “Save Image” in the menu that appears.'),
+        ('How do I send or save a card?', 'With the card open, tap “SEND”. At the top choose the format, “JPG · IMAGE” or “PDF”, then “SEND” to send it by WhatsApp, email or another app, or “SAVE TO PHONE”. On Android the image goes to your gallery (Pictures › My Kardek) and the PDF to Downloads › My Kardek; on iPhone choose “Save Image” or “Save to Files” in the menu that appears. The card comes out edge to edge, without the app’s buttons.'),
         ('Do quotes calculate the total and tax?', 'No, on purpose: every country and business calculates differently. You type the amounts, subtotal, tax and total yourself. They are a quick draft to send to a client, not an invoice.'),
+        ('What are budgets for?', 'To keep track of a party, a trip or the month: you jot down each expense, tick what you have paid and write the total spent and what is left. They don’t calculate on their own either; you type the amounts.'),
         ('How do I move, duplicate or delete a card?', 'With the card open, tap “⋯”. There you can move it to another drawer, duplicate it or delete it. If you delete it, you have a few seconds to tap “UNDO”.'),
         ('The keyboard covers what I type.', 'The card scrolls up to what you are typing on its own, and you can also move it with your finger. When the keyboard closes it goes back into place.'),
         ('How do I turn off sounds or change the language?', 'In Settings (the gear on the card file screen): SOUNDS YES / NO and LANGUAGE ESPAÑOL / ENGLISH. Templates switch language; what you wrote does not.'),
@@ -808,11 +810,11 @@ MK_TERMS_BUY = {
 MK_TERMS_EXTRA = {
     'es': [('Tus fichas', 'Tus fichas y fotos se guardan solo en tu teléfono. No tenemos copia de ellas y no podemos recuperarlas si se pierden, por ejemplo al desinstalar la app o cambiar de teléfono.'),
            ('Clave de los cajones', 'La clave de 4 dígitos impide abrir un cajón desde la app, pero no cifra su contenido. Si la olvidas no se puede recuperar: la única forma de quitarla es vaciar ese cajón, con lo que sus fichas se borran.'),
-           ('Cotizaciones', 'Las plantillas de cotización son para llenar a mano: no calculan totales ni impuestos y no son documentos tributarios (boleta, factura ni equivalentes). Eres responsable de los valores, impuestos y condiciones que escribes y de lo que envías a tus clientes.'),
+           ('Cotizaciones y presupuestos', 'Las plantillas de cotización y de presupuesto son para llenar a mano: no calculan totales ni impuestos y no son documentos tributarios (boleta, factura ni equivalentes). Eres responsable de los valores, impuestos y condiciones que escribes y de lo que envías a tus clientes.'),
            ('Tu contenido', 'Lo que escribes y las fotos que agregas son tuyos. Eres responsable de tener derecho a usar las fotos y logos que pongas en tus fichas.')],
     'en': [('Your cards', 'Your cards and photos are stored only on your phone. We keep no copy of them and cannot recover them if they are lost, for example when uninstalling the app or changing phones.'),
            ('Drawer codes', 'The 4-digit code prevents a drawer from being opened in the app, but it does not encrypt its contents. If you forget it, it cannot be recovered: the only way to remove it is to empty that drawer, which deletes its cards.'),
-           ('Quotes', 'Quote templates are filled in by hand: they do not calculate totals or taxes and they are not tax documents (invoices, receipts or equivalents). You are responsible for the amounts, taxes and conditions you write and for what you send to your clients.'),
+           ('Quotes and budgets', 'Quote and budget templates are filled in by hand: they do not calculate totals or taxes and they are not tax documents (invoices, receipts or equivalents). You are responsible for the amounts, taxes and conditions you write and for what you send to your clients.'),
            ('Your content', 'What you write and the photos you add are yours. You are responsible for having the right to use the photos and logos you put on your cards.')],
 }
 for lang in ('es', 'en'):
