@@ -668,11 +668,11 @@ MK = {
         tag='TU FICHERO DE NOTAS',
         intro=['Un fichero de verdad en tu teléfono: cuatro cajones que abres y cierras, y fichas que sacas, escribes y vuelves a guardar.',
                'Parte con una hoja de cuaderno en blanco o elige entre 48 plantillas: listas, planificadores, seguimientos con fotos, recetas, recados, cotizaciones y presupuestos. Todo se edita, todo queda en tu teléfono y funciona sin internet.',
-               'La app es gratis con la hoja de cuaderno (líneas, cuadrícula, puntos o en blanco). Las otras 47 plantillas se desbloquean con un solo pago, para siempre.'],
+               'La app es gratis con cuatro plantillas: la hoja de cuaderno (líneas, cuadrícula, puntos o en blanco), No olvidar, ¿Qué estoy haciendo? y Mi semana. Las otras 44 se desbloquean con un solo pago, para siempre.'],
         pills=['GRATIS', 'SIN ANUNCIOS', 'SIN SUSCRIPCIÓN', 'SIN CUENTA', 'FUNCIONA SIN INTERNET', '48 PLANTILLAS', 'ESPAÑOL · ENGLISH'],
         shots_h='CAPTURAS', feat_h='QUÉ HACE', fam_h='LAS 48 PLANTILLAS',
         feats=[('4 cajones', 'Ponle nombre y color de etiqueta a cada uno. Las fichas se ordenan solas por nombre.'),
-               ('48 plantillas', 'La hoja de cuaderno es gratis; las otras 47, en 10 familias, con un pago único. Cada título, casilla y opción se edita.'),
+               ('48 plantillas', 'Cuatro gratis y 44 más con un pago único, en 11 familias. Cada título, casilla y opción se edita.'),
                ('Seguimiento con fotos', 'Una planta que crece, una obra, tus hijos: foto, fecha y nota, una tras otra.'),
                ('Cotizaciones al paso', 'Tu logo, de quién es, el cliente y los ítems. Sin cálculos automáticos: tú escribes valores e impuestos.'),
                ('Presupuestos', 'Una fiesta, un viaje o el mes: anota lo que gastas, marca lo pagado y lleva el total.'),
@@ -685,11 +685,11 @@ MK = {
         tag='YOUR NOTE CARD FILE',
         intro=['A real card file on your phone: four drawers you open and close, and cards you take out, write on and put back.',
                'Start with a blank notebook page or pick one of 48 templates: lists, planners, photo trackers, recipes, notes for others, quotes and budgets. Everything is editable, everything stays on your phone and it works offline.',
-               'The app is free with the notebook page (lines, grid, dots or blank). The other 47 templates unlock with a single payment, forever.'],
+               'The app is free with four templates: the notebook page (lines, grid, dots or blank), Note to self, What am I even doing? and My week. The other 44 unlock with a single payment, forever.'],
         pills=['FREE', 'NO ADS', 'NO SUBSCRIPTION', 'NO ACCOUNT', 'WORKS OFFLINE', '48 TEMPLATES', 'ENGLISH · ESPAÑOL'],
         shots_h='SCREENSHOTS', feat_h='WHAT IT DOES', fam_h='THE 48 TEMPLATES',
         feats=[('4 drawers', 'Give each one a name and a label color. Cards sort themselves by name.'),
-               ('48 templates', 'The notebook page is free; the other 47, in 10 families, with a one-time payment. Every title, box and option is editable.'),
+               ('48 templates', 'Four free and 44 more with a one-time payment, in 11 families. Every title, box and option is editable.'),
                ('Photo trackers', 'A growing plant, a building project, your kids: photo, date and note, one after another.'),
                ('Quick quotes', 'Your logo, who it’s from, the client and the items. No automatic math: you type your own amounts and taxes.'),
                ('Budgets', 'A party, a trip or the month: jot down what you spend, tick what’s paid and keep the total.'),
@@ -759,7 +759,7 @@ for lang, (path, h1, meta, secs, alt_abs) in MK_PRIV.items():
 
 MK_SUP = {
     'es': ('kardek/soporte', 'Soporte', 'Escríbenos y te respondemos lo antes posible. Si es un error, cuéntanos el modelo de tu teléfono, la plantilla y qué estabas haciendo.', [
-        ('¿Qué es gratis y qué se paga?', 'La app es gratis con la hoja de cuaderno: líneas, cuadrícula, puntos o en blanco. Las otras 47 plantillas se desbloquean juntas con un solo pago, para siempre: sin suscripción ni anuncios. La clave, la búsqueda y enviar en JPG o PDF son gratis.'),
+        ('¿Qué es gratis y qué se paga?', 'La app es gratis con cuatro plantillas: la hoja de cuaderno (líneas, cuadrícula, puntos o en blanco), No olvidar, ¿Qué estoy haciendo? y Mi semana. Las otras 44 se desbloquean juntas con un solo pago, para siempre: sin suscripción ni anuncios. La clave, la búsqueda y enviar en JPG o PDF son gratis.'),
         ('Cambié de teléfono o reinstalé la app y aparecen los candados.', 'Abre Ajustes y toca «RESTAURAR COMPRA», con la misma cuenta de Google Play (o Apple) con que compraste. Las plantillas vuelven sin pagar de nuevo. Tus fichas, en cambio, no se traspasan solas: quedan en el teléfono anterior.'),
         ('¿Cómo creo una ficha?', 'Abre un cajón y toca «+ FICHA». Desliza de lado para ver las plantillas completas, o toca una familia arriba para saltar a ella. Toca la plantilla del centro o «CREAR».'),
         ('¿Cómo le cambio el nombre a una ficha?', 'Con la ficha abierta, toca su nombre arriba (junto al lápiz) o la pestaña de la propia ficha. Ese es el nombre que asoma en el cajón.'),
@@ -776,7 +776,7 @@ MK_SUP = {
         ('¿Necesito internet?', 'No. My Kardek funciona entera sin conexión.'),
     ], '/kardek/support/', 'PREGUNTAS FRECUENTES'),
     'en': ('kardek/support', 'Support', "Write to us and we'll get back to you as soon as possible. If it's a bug, tell us your phone model, the template and what you were doing.", [
-        ('What’s free and what’s paid?', 'The app is free with the notebook page: lines, grid, dots or blank. The other 47 templates unlock together with a single payment, forever: no subscription, no ads. Drawer codes, search and sending as JPG or PDF are free.'),
+        ('What’s free and what’s paid?', 'The app is free with four templates: the notebook page (lines, grid, dots or blank), Note to self, What am I even doing? and My week. The other 44 unlock together with a single payment, forever: no subscription, no ads. Drawer codes, search and sending as JPG or PDF are free.'),
         ('I changed phones or reinstalled the app and the locks are back.', 'Open Settings and tap “RESTORE PURCHASE” with the same Google Play (or Apple) account you bought with. The templates come back without paying again. Your cards, however, don’t move on their own: they stay on the old phone.'),
         ('How do I create a card?', 'Open a drawer and tap “+ CARD”. Swipe sideways to see the templates in full, or tap a family at the top to jump to it. Tap the template in the middle or “CREATE”.'),
         ('How do I rename a card?', 'With the card open, tap its name at the top (next to the pencil) or the card’s own tab. That is the name that shows in the drawer.'),
@@ -808,9 +808,9 @@ for lang, (path, h1, lead, faq, alt_abs, faq_h) in MK_SUP.items():
 
 # Términos: app gratis con una compra única dentro de la app (todas las plantillas).
 MK_TERMS_BUY = {
-    'es': [('La app y la compra de plantillas', 'My Kardek es gratis y no tiene anuncios ni suscripción. La hoja de cuaderno se usa sin pagar; las otras plantillas se desbloquean con una compra única dentro de la app. El precio se muestra en tu moneda antes de pagar. La compra queda asociada a tu cuenta de la tienda: puedes restaurarla en Ajustes, sin pagar de nuevo, usando la misma cuenta.'),
+    'es': [('La app y la compra de plantillas', 'My Kardek es gratis y no tiene anuncios ni suscripción. Cuatro plantillas se usan sin pagar; las otras se desbloquean con una compra única dentro de la app. El precio se muestra en tu moneda antes de pagar. La compra queda asociada a tu cuenta de la tienda: puedes restaurarla en Ajustes, sin pagar de nuevo, usando la misma cuenta.'),
            ('Pagos y reembolsos', 'Los pagos los procesa Google Play o la App Store. Los reembolsos se rigen por las políticas de esa tienda; si tienes un problema con tu compra, escríbenos y te ayudamos.')],
-    'en': [('The app and the template purchase', 'My Kardek is free and has no ads or subscription. The notebook page can be used without paying; the other templates unlock with a one-time in-app purchase. The price is shown in your currency before you pay. The purchase is tied to your store account: you can restore it in Settings, without paying again, using the same account.'),
+    'en': [('The app and the template purchase', 'My Kardek is free and has no ads or subscription. Four templates can be used without paying; the other templates unlock with a one-time in-app purchase. The price is shown in your currency before you pay. The purchase is tied to your store account: you can restore it in Settings, without paying again, using the same account.'),
            ('Payments and refunds', 'Payments are processed by Google Play or the App Store. Refunds are governed by that store’s policies; if you have a problem with your purchase, write to us and we will help.')],
 }
 MK_TERMS_EXTRA = {
