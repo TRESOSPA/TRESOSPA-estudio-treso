@@ -667,11 +667,12 @@ MK = {
     'es': dict(
         tag='TU FICHERO DE NOTAS',
         intro=['Un fichero de verdad en tu teléfono: cuatro cajones que abres y cierras, y fichas que sacas, escribes y vuelves a guardar.',
-               'Parte con una hoja de cuaderno en blanco o elige entre 48 plantillas: listas, planificadores, seguimientos con fotos, recetas, recados, cotizaciones y presupuestos. Todo se edita, todo queda en tu teléfono y funciona sin internet.'],
-        pills=['PAGO ÚNICO', 'SIN ANUNCIOS', 'SIN SUSCRIPCIÓN', 'SIN CUENTA', 'FUNCIONA SIN INTERNET', '48 PLANTILLAS', 'ESPAÑOL · ENGLISH'],
+               'Parte con una hoja de cuaderno en blanco o elige entre 48 plantillas: listas, planificadores, seguimientos con fotos, recetas, recados, cotizaciones y presupuestos. Todo se edita, todo queda en tu teléfono y funciona sin internet.',
+               'La app es gratis con la hoja de cuaderno (líneas, cuadrícula, puntos o en blanco). Las otras 47 plantillas se desbloquean con un solo pago, para siempre.'],
+        pills=['GRATIS', 'SIN ANUNCIOS', 'SIN SUSCRIPCIÓN', 'SIN CUENTA', 'FUNCIONA SIN INTERNET', '48 PLANTILLAS', 'ESPAÑOL · ENGLISH'],
         shots_h='CAPTURAS', feat_h='QUÉ HACE', fam_h='LAS 48 PLANTILLAS',
         feats=[('4 cajones', 'Ponle nombre y color de etiqueta a cada uno. Las fichas se ordenan solas por nombre.'),
-               ('48 plantillas', 'En 11 familias. Las ves completas antes de elegir, y cada título, casilla y opción se edita.'),
+               ('48 plantillas', 'La hoja de cuaderno es gratis; las otras 47, en 10 familias, con un pago único. Cada título, casilla y opción se edita.'),
                ('Seguimiento con fotos', 'Una planta que crece, una obra, tus hijos: foto, fecha y nota, una tras otra.'),
                ('Cotizaciones al paso', 'Tu logo, de quién es, el cliente y los ítems. Sin cálculos automáticos: tú escribes valores e impuestos.'),
                ('Presupuestos', 'Una fiesta, un viaje o el mes: anota lo que gastas, marca lo pagado y lleva el total.'),
@@ -683,11 +684,12 @@ MK = {
     'en': dict(
         tag='YOUR NOTE CARD FILE',
         intro=['A real card file on your phone: four drawers you open and close, and cards you take out, write on and put back.',
-               'Start with a blank notebook page or pick one of 48 templates: lists, planners, photo trackers, recipes, notes for others, quotes and budgets. Everything is editable, everything stays on your phone and it works offline.'],
-        pills=['ONE-TIME PURCHASE', 'NO ADS', 'NO SUBSCRIPTION', 'NO ACCOUNT', 'WORKS OFFLINE', '48 TEMPLATES', 'ENGLISH · ESPAÑOL'],
+               'Start with a blank notebook page or pick one of 48 templates: lists, planners, photo trackers, recipes, notes for others, quotes and budgets. Everything is editable, everything stays on your phone and it works offline.',
+               'The app is free with the notebook page (lines, grid, dots or blank). The other 47 templates unlock with a single payment, forever.'],
+        pills=['FREE', 'NO ADS', 'NO SUBSCRIPTION', 'NO ACCOUNT', 'WORKS OFFLINE', '48 TEMPLATES', 'ENGLISH · ESPAÑOL'],
         shots_h='SCREENSHOTS', feat_h='WHAT IT DOES', fam_h='THE 48 TEMPLATES',
         feats=[('4 drawers', 'Give each one a name and a label color. Cards sort themselves by name.'),
-               ('48 templates', 'In 11 families. You see them in full before you pick, and every title, box and option is editable.'),
+               ('48 templates', 'The notebook page is free; the other 47, in 10 families, with a one-time payment. Every title, box and option is editable.'),
                ('Photo trackers', 'A growing plant, a building project, your kids: photo, date and note, one after another.'),
                ('Quick quotes', 'Your logo, who it’s from, the client and the items. No automatic math: you type your own amounts and taxes.'),
                ('Budgets', 'A party, a trip or the month: jot down what you spend, tick what’s paid and keep the total.'),
@@ -733,7 +735,7 @@ MK_PRIV = {
         ('Clave de los cajones', 'Si proteges un cajón con una clave de 4 dígitos, la app no guarda la clave: guarda en tu teléfono solo una huella de ella para poder comprobarla. La clave impide abrir el cajón desde la app, pero no cifra su contenido. Si la olvidas no se puede recuperar; la única forma de quitarla es vaciar ese cajón.'),
         ('Enviar o guardar una ficha', 'Cuando tocas ENVIAR, la app crea la imagen (JPG) o el PDF de la ficha dentro de tu teléfono. Si eliges enviarla, se abre el menú de compartir del sistema y tú decides a quién y por dónde; lo que envíes a otra app queda sujeto a la política de privacidad de esa app. Si eliges guardarla, en Android la imagen queda en tu galería (Imágenes › My Kardek) y el PDF en Descargas › My Kardek; en iPhone se abre el menú del sistema, donde eliges «Guardar imagen» o «Guardar en Archivos».'),
         ('Sonidos y vibración', 'Se usan solo como efectos al abrir y cerrar cajones y fichas. Los sonidos se apagan en Ajustes.'),
-        ('Compra de la app', 'La compra la procesa la tienda (Google Play o App Store) con tu cuenta de esa tienda, según su propia política de privacidad. Nosotros no recibimos tus datos de pago.'),
+        ('Compras dentro de la app', 'La app es gratis. Si desbloqueas las plantillas, el pago lo procesa la tienda (Google Play o App Store) con tu cuenta de esa tienda, según su propia política de privacidad. La app solo le pregunta a la tienda si la compra existe, para desbloquear las plantillas; nosotros no recibimos tus datos de pago ni personales.'),
         ('Niños', 'La app no está dirigida a menores de 13 años y no recopila datos de nadie.'),
         ('Cambios', 'Si esta política cambia, publicaremos la nueva versión en esta misma página con su fecha.'),
         ('Contacto', f'Para cualquier consulta sobre privacidad escríbenos a <a class="mail" href="mailto:{MAIL}">{MAIL}</a>'),
@@ -746,7 +748,7 @@ MK_PRIV = {
         ('Drawer codes', 'If you lock a drawer with a 4-digit code, the app does not store the code: it stores on your phone only a fingerprint of it in order to check it. The code prevents the drawer from being opened in the app, but it does not encrypt its contents. If you forget it, it cannot be recovered; the only way to remove it is to empty that drawer.'),
         ('Sending or saving a card', 'When you tap SEND, the app creates the card’s image (JPG) or PDF on your phone. If you choose to send it, the system share menu opens and you decide who gets it and how; whatever you send to another app is subject to that app’s privacy policy. If you choose to save it, on Android the image goes to your gallery (Pictures › My Kardek) and the PDF to Downloads › My Kardek; on iPhone the system menu opens, where you choose “Save Image” or “Save to Files”.'),
         ('Sounds and vibration', 'They are used only as effects when opening and closing drawers and cards. Sounds can be turned off in Settings.'),
-        ('App purchase', 'The purchase is processed by the store (Google Play or the App Store) with your store account, under the store’s own privacy policy. We never receive your payment details.'),
+        ('In-app purchases', 'The app is free. If you unlock the templates, the payment is processed by the store (Google Play or the App Store) with your store account, under the store’s own privacy policy. The app only asks the store whether the purchase exists, to unlock the templates; we never receive your payment or personal details.'),
         ('Children', 'The app is not directed at children under 13 and collects no data from anyone.'),
         ('Changes', 'If this policy changes, we will publish the new version on this same page with its date.'),
         ('Contact', f'For any privacy question, write to us at <a class="mail" href="mailto:{MAIL}">{MAIL}</a>'),
@@ -757,6 +759,8 @@ for lang, (path, h1, meta, secs, alt_abs) in MK_PRIV.items():
 
 MK_SUP = {
     'es': ('kardek/soporte', 'Soporte', 'Escríbenos y te respondemos lo antes posible. Si es un error, cuéntanos el modelo de tu teléfono, la plantilla y qué estabas haciendo.', [
+        ('¿Qué es gratis y qué se paga?', 'La app es gratis con la hoja de cuaderno: líneas, cuadrícula, puntos o en blanco. Las otras 47 plantillas se desbloquean juntas con un solo pago, para siempre: sin suscripción ni anuncios. La clave, la búsqueda y enviar en JPG o PDF son gratis.'),
+        ('Cambié de teléfono o reinstalé la app y aparecen los candados.', 'Abre Ajustes y toca «RESTAURAR COMPRA», con la misma cuenta de Google Play (o Apple) con que compraste. Las plantillas vuelven sin pagar de nuevo. Tus fichas, en cambio, no se traspasan solas: quedan en el teléfono anterior.'),
         ('¿Cómo creo una ficha?', 'Abre un cajón y toca «+ FICHA». Desliza de lado para ver las plantillas completas, o toca una familia arriba para saltar a ella. Toca la plantilla del centro o «CREAR».'),
         ('¿Cómo le cambio el nombre a una ficha?', 'Con la ficha abierta, toca su nombre arriba (junto al lápiz) o la pestaña de la propia ficha. Ese es el nombre que asoma en el cajón.'),
         ('¿Cómo cambio el nombre o el color de un cajón?', 'En la pantalla del fichero toca «EDITAR CAJONES». Elige el cajón (01 a 04), escribe el nombre y toca un color de etiqueta.'),
@@ -772,6 +776,8 @@ MK_SUP = {
         ('¿Necesito internet?', 'No. My Kardek funciona entera sin conexión.'),
     ], '/kardek/support/', 'PREGUNTAS FRECUENTES'),
     'en': ('kardek/support', 'Support', "Write to us and we'll get back to you as soon as possible. If it's a bug, tell us your phone model, the template and what you were doing.", [
+        ('What’s free and what’s paid?', 'The app is free with the notebook page: lines, grid, dots or blank. The other 47 templates unlock together with a single payment, forever: no subscription, no ads. Drawer codes, search and sending as JPG or PDF are free.'),
+        ('I changed phones or reinstalled the app and the locks are back.', 'Open Settings and tap “RESTORE PURCHASE” with the same Google Play (or Apple) account you bought with. The templates come back without paying again. Your cards, however, don’t move on their own: they stay on the old phone.'),
         ('How do I create a card?', 'Open a drawer and tap “+ CARD”. Swipe sideways to see the templates in full, or tap a family at the top to jump to it. Tap the template in the middle or “CREATE”.'),
         ('How do I rename a card?', 'With the card open, tap its name at the top (next to the pencil) or the card’s own tab. That is the name that shows in the drawer.'),
         ('How do I change a drawer’s name or color?', 'On the card file screen tap “EDIT DRAWERS”. Choose the drawer (01 to 04), type the name and tap a label color.'),
@@ -800,11 +806,11 @@ for lang, (path, h1, lead, faq, alt_abs, faq_h) in MK_SUP.items():
 """ + game_footer(lang, 'kardek')
     page(path, lang, f'{h1} · My Kardek', f'{h1} · My Kardek · Estudio Treso', 'game mk', body, alt_abs, 2, og='mk-hero')
 
-# Términos: app pagada (sin compras dentro de la app), como 12/12.
+# Términos: app gratis con una compra única dentro de la app (todas las plantillas).
 MK_TERMS_BUY = {
-    'es': [('Compra de la app', 'My Kardek se compra con un pago único en la tienda (Google Play o App Store). No tiene compras dentro de la app, anuncios ni suscripción. El precio se muestra en la tienda, en tu moneda, antes de pagar. La compra queda asociada a tu cuenta de la tienda: puedes volver a instalar la app sin pagar de nuevo usando la misma cuenta.'),
+    'es': [('La app y la compra de plantillas', 'My Kardek es gratis y no tiene anuncios ni suscripción. La hoja de cuaderno se usa sin pagar; las otras plantillas se desbloquean con una compra única dentro de la app. El precio se muestra en tu moneda antes de pagar. La compra queda asociada a tu cuenta de la tienda: puedes restaurarla en Ajustes, sin pagar de nuevo, usando la misma cuenta.'),
            ('Pagos y reembolsos', 'Los pagos los procesa Google Play o la App Store. Los reembolsos se rigen por las políticas de esa tienda; si tienes un problema con tu compra, escríbenos y te ayudamos.')],
-    'en': [('App purchase', 'My Kardek is bought with a one-time payment in the store (Google Play or the App Store). It has no in-app purchases, ads or subscription. The price is shown in the store, in your currency, before you pay. The purchase is tied to your store account: you can reinstall the app without paying again using the same account.'),
+    'en': [('The app and the template purchase', 'My Kardek is free and has no ads or subscription. The notebook page can be used without paying; the other templates unlock with a one-time in-app purchase. The price is shown in your currency before you pay. The purchase is tied to your store account: you can restore it in Settings, without paying again, using the same account.'),
            ('Payments and refunds', 'Payments are processed by Google Play or the App Store. Refunds are governed by that store’s policies; if you have a problem with your purchase, write to us and we will help.')],
 }
 MK_TERMS_EXTRA = {
