@@ -80,8 +80,7 @@ def game_footer(lang, slug='depth40'):
 STORES = {
     'depth40': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.depth40', 'ios': None},
     'widgetdesign': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.widgetdesign', 'ios': None},
-    # 12/12: cuando Google Play la publique → 'https://play.google.com/store/apps/details?id=cl.treso.doce12'
-    'doce12': {'android': None, 'ios': None},
+    'doce12': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.doce12', 'ios': None},
     # My Kardek: cuando Google Play la publique → 'https://play.google.com/store/apps/details?id=cl.treso.fichero'
     'kardek': {'android': None, 'ios': None},
 }
