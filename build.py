@@ -46,7 +46,7 @@ def page(path, lang, title, desc, body_class, body, alt_href, depth, og='d40-her
 def studio_top(lang, alt):
     return f'''<div class="wrap"><header class="top">
   <a class="brand" href="{{up}}{'' if lang == 'es' else 'en/'}" aria-label="Estudio Treso"><img src="{{up}}assets/logo.svg" alt=""><span><small>ESTUDIO</small><b>TRESO</b></span></a>
-  <a class="lang" href="{alt}" hreflang="{'en' if lang == 'es' else 'es'}">{'ENGLISH' if lang == 'es' else 'ESPAÑOL'}</a>
+  <nav class="topnav"><a class="lang" href="{{up}}{'contacto/' if lang == 'es' else 'en/contact/'}">{'CONTACTO' if lang == 'es' else 'CONTACT'}</a><a class="lang" href="{alt}" hreflang="{'en' if lang == 'es' else 'es'}">{'ENGLISH' if lang == 'es' else 'ESPAÑOL'}</a></nav>
 </header></div>'''
 
 
@@ -168,8 +168,33 @@ for lang, t in STUDIO.items():
     <div class="soon-card"><span class="k">{t['more_k']}</span><p>{t['more']}</p></div>
   </div>
 </main>
-<div class="wrap"><footer><span>© 2026 TRESO SPA · Santiago, Chile</span><span>{t['contact']}: <a href="mailto:{MAIL}">{MAIL}</a></span></footer></div>'''
+<div class="wrap"><footer><span>© 2026 TRESO SPA · Santiago, Chile</span><span><a href="{{up}}{'contacto/' if lang == 'es' else 'en/contact/'}">{t['contact']}</a> · <a href="mailto:{MAIL}">{MAIL}</a></span></footer></div>'''
     page(path, lang, 'Estudio Treso', t['lead'], 'studio', body, '/en/' if lang == 'es' else '/', 0 if lang == 'es' else 1)
+
+# ---------------------------------------------------------------- Contacto
+COMPANY = dict(name='TRESO SPA', addr='Avenida Perú 1030, Santiago, Chile')
+CONTACT = {
+    'es': dict(path='contacto', alt='/en/contact/', h1='Contacto', lead='Estudio Treso es el estudio de juegos y aplicaciones de TRESO SPA. Escríbenos por cualquier consulta sobre nuestros juegos, apps, soporte o privacidad.',
+               rows=[('Empresa', 'TRESO SPA'), ('Dirección', COMPANY['addr']), ('Correo', f'<a href="mailto:{MAIL}">{MAIL}</a>'), ('Sitio', '<a href="https://estudio.treso.cl">estudio.treso.cl</a>')],
+               sup_h='SOPORTE POR APP', sup=[('Depth 40', '{up}depth40/soporte/'), ('Widget Design', '{up}widgetdesign/soporte/'), ('12/12', '{up}doce12/soporte/'), ('My Kardek', '{up}kardek/soporte/')]),
+    'en': dict(path='en/contact', alt='/contacto/', h1='Contact', lead='Estudio Treso is the games and apps studio of TRESO SPA. Write to us about our games, apps, support or privacy.',
+               rows=[('Company', 'TRESO SPA'), ('Address', COMPANY['addr']), ('Email', f'<a href="mailto:{MAIL}">{MAIL}</a>'), ('Website', '<a href="https://estudio.treso.cl">estudio.treso.cl</a>')],
+               sup_h='SUPPORT BY APP', sup=[('Depth 40', '{up}depth40/support/'), ('Widget Design', '{up}widgetdesign/support/'), ('12/12', '{up}doce12/support/'), ('My Kardek', '{up}kardek/support/')]),
+}
+for lang, t in CONTACT.items():
+    alt = '{up}' + t['alt'].lstrip('/')
+    rows = ''.join(f'<dt>{k}</dt><dd>{v}</dd>' for k, v in t['rows'])
+    sup = ''.join(f'<li><a href="{h}">{n}</a></li>' for n, h in t['sup'])
+    body = studio_top(lang, alt) + f'''
+<main id="main" class="wrap contact">
+  <h1>{t['h1']}</h1>
+  <p class="lead">{t['lead']}</p>
+  <dl>{rows}</dl>
+  <h2 class="cat">{t['sup_h']}</h2>
+  <ul class="sup">{sup}</ul>
+</main>
+<div class="wrap"><footer><span>© 2026 TRESO SPA · {COMPANY['addr']}</span><span><a href="mailto:{MAIL}">{MAIL}</a></span></footer></div>'''
+    page(t['path'], lang, f"{t['h1']} · Estudio Treso", t['lead'], 'studio', body, t['alt'], 1 if lang == 'es' else 2)
 
 # ---------------------------------------------------------------- Depth 40
 D40 = {

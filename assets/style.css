@@ -205,3 +205,10 @@ body.mk { --sea: #FFFFFF; --sea2: #F4F4F2; --fog: #222222; --fog2: #5A5A5A; --cy
 .game-card.mk:hover .go { background: #111111; color: #FFFFFF; }
 .game-card.mk .pic { background-position: center; border-right: 1.2px solid #111111; }
 @media (max-width: 680px) { .game-card.mk .pic { border-right: 0; border-bottom: 1.2px solid #111111; } }
+.topnav { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.contact dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 12px 24px; margin: 28px 0 36px; padding: 20px 22px; border: 1px solid var(--line); border-radius: 12px; }
+.contact dt { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink2); padding-top: 3px; }
+.contact dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.contact .sup { list-style: none; padding: 0; margin: 12px 0 40px; display: flex; flex-wrap: wrap; gap: 10px; }
+.contact .sup a { display: inline-block; padding: 10px 14px; border: 1px solid var(--line); border-radius: 20px; text-decoration: none; }
+@media (max-width: 520px) { .contact dl { grid-template-columns: minmax(0, 1fr); gap: 2px; } .contact dd { margin-bottom: 10px; } }
