@@ -81,8 +81,7 @@ STORES = {
     'depth40': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.depth40', 'ios': None},
     'widgetdesign': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.widgetdesign', 'ios': None},
     'doce12': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.doce12', 'ios': None},
-    # My Kardek: cuando Google Play la publique → 'https://play.google.com/store/apps/details?id=cl.treso.fichero'
-    'kardek': {'android': None, 'ios': None},
+    'kardek': {'android': 'https://play.google.com/store/apps/details?id=cl.treso.fichero', 'ios': None},
 }
 PLAT = {'android': ('Google Play', 'Android'), 'ios': ('App Store', 'iPhone')}
 
